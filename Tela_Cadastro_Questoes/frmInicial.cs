@@ -23,6 +23,18 @@ namespace Gestor_de_estudos
             InitializeComponent();
             //FormBorderStyle = FormBorderStyle.None;
             richTextBox2.Text = "dsfsdfasfasfasfafO ser humano e criado por amor, feito a imagem e à semelhança de Deus. É capas de se conhecer, de se possui e de livremente se dar e entrar em comunhão com outras pessoas.   A existência humana se baseia sobre três relações fundamentais intimamente ligadas: as relações com Deus, com o próximo e com a terra. Segundo a bíblia essas relações vitais romperam - se dentro e fora de nós.Esta ruptura é o pecado. Existe uma acusação lançada contra o pensamento judaico-cristão que é equivocada, onde fala que o homem é convidado a dominar a terra e isso favoreceria a exploração selvagem da natureza.A palavra cita cultivar e quer dizer, lavrar ou trabalhar um terreno. O ser humano e criado por amor, feito a imagem e à semelhança de Deus. É capas de se conhecer, de se possui e de livremente se dar e entrar em comunhão com outras pessoas.   A existência humana se baseia sobre três relações fundamentais intimamente ligadas: as relações com Deus, com o próximo e com a terra. Segundo a bíblia essas relações vitais romperam - se dentro e fora de nós.Esta ruptura é o pecado. Existe uma acusação lançada contra o pensamento judaico-cristão que é equivocada, onde fala que o homem é convidado a dominar a terra e isso favoreceria a exploração selvagem da natureza.A palavra cita cultivar e quer dizer, lavrar ou trabalhar um terreno.";
+            Control control = new Control();
+            CheckedListBox checkedListBox = new CheckedListBox();
+            checkedListBox.Items.Add("fsadfsadfasdfr humano e criado por amor, feito a imagem e à semelhança de Deus. É capas de se conhecer, de se possui e de livremen");
+            checkedListBox.Items.Add("fsadfsadfasdf");
+            checkedListBox.Items.Add("fsadfsadfasdf");
+            checkedListBox.Items.Add("fsadfsadfasdf");
+            control = checkedListBox;
+            control.Text = "dsfsdfasfasfasfafO ser humano e criado por amor, feito a imagem e à semelhança de Deus. É capas de se conhecer, de se possui e de livremente se dar e entrar em comunhão com outras pessoas.   A existência humana se baseia sobre três relações fundamentais intimamente ligadas: as relações com Deus, com o próximo e com a terra. Segundo a bíblia essas relações vitais romperam - se dentro e fora de nós.Esta ruptura é o pecado. Existe uma acusação lançada contra o pensamento judaico-cristão q";
+            control.Text =  "dsfsdfasfasfasfafO ser humano e criado por amor, feito a imagem e à semelhança de Deus. É capas de se conhecer, de se possui e de livremente se dar e entrar em comunhão com outras pessoas.   A existência humana se baseia sobre três relações fundamentais intimamente ligadas: as relações com Deus, com o próximo e com a terra. Segundo a bíblia essas relações vitais romperam - se dentro e fora de nós.Esta ruptura é o pecado. Existe uma acusação lançada contra o pensamento judaico-cristão q";
+            control.Location = new Point(0, 150);
+            
+            richTextBox2.Controls.Add(control);
             WindowState = FormWindowState.Maximized;           
             
         }
@@ -136,6 +148,12 @@ namespace Gestor_de_estudos
         private void prntdoc1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             impressao.PrintPage(sender, e, richEditTexto);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int lent = richTextBox2.TextLength;
+            richTextBox2.ZoomFactor = 50;
         }
     }
 }

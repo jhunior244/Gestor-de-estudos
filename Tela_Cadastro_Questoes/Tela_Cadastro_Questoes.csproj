@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BotoesAlternativas.cs" />
     <Compile Include="ControleImpressao.cs" />
     <Compile Include="EditorDeResumos.cs" />
     <Compile Include="frmCadastroQuestoes.cs">

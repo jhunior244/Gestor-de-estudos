@@ -51,7 +51,6 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.radioButtonB = new System.Windows.Forms.RadioButton();
             this.radioButtonC = new System.Windows.Forms.RadioButton();
             this.radioButtonD = new System.Windows.Forms.RadioButton();
@@ -96,6 +95,9 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.miniToolStrip = new System.Windows.Forms.MenuStrip();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.panel1.SuspendLayout();
             this.menuStripPrincipal.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -112,6 +114,7 @@
             this.panel1.AutoScroll = true;
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.btnNavegador);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnPlanos);
@@ -277,7 +280,7 @@
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(795, 672);
+            this.tabPage5.Size = new System.Drawing.Size(691, 672);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Visualisador";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -286,14 +289,14 @@
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(795, 672);
+            this.tabPage3.Size = new System.Drawing.Size(691, 672);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Adicionar Questão";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.richTextBox2);
+            this.tabPage2.Controls.Add(this.checkedListBox1);
             this.tabPage2.Controls.Add(this.radioButtonB);
             this.tabPage2.Controls.Add(this.radioButtonC);
             this.tabPage2.Controls.Add(this.radioButtonD);
@@ -305,6 +308,7 @@
             this.tabPage2.Controls.Add(this.comboBox3);
             this.tabPage2.Controls.Add(this.comboBox2);
             this.tabPage2.Controls.Add(this.comboBox1);
+            this.tabPage2.Controls.Add(this.richTextBox2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -313,21 +317,10 @@
             this.tabPage2.Text = "Novo Simulado";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.richTextBox2.Location = new System.Drawing.Point(25, 57);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedHorizontal;
-            this.richTextBox2.Size = new System.Drawing.Size(618, 182);
-            this.richTextBox2.TabIndex = 17;
-            this.richTextBox2.Text = "";
-            // 
             // radioButtonB
             // 
             this.radioButtonB.AutoSize = true;
-            this.radioButtonB.Location = new System.Drawing.Point(43, 278);
+            this.radioButtonB.Location = new System.Drawing.Point(25, 553);
             this.radioButtonB.Name = "radioButtonB";
             this.radioButtonB.Size = new System.Drawing.Size(38, 17);
             this.radioButtonB.TabIndex = 15;
@@ -338,7 +331,7 @@
             // radioButtonC
             // 
             this.radioButtonC.AutoSize = true;
-            this.radioButtonC.Location = new System.Drawing.Point(43, 301);
+            this.radioButtonC.Location = new System.Drawing.Point(25, 576);
             this.radioButtonC.Name = "radioButtonC";
             this.radioButtonC.Size = new System.Drawing.Size(38, 17);
             this.radioButtonC.TabIndex = 14;
@@ -349,7 +342,7 @@
             // radioButtonD
             // 
             this.radioButtonD.AutoSize = true;
-            this.radioButtonD.Location = new System.Drawing.Point(43, 324);
+            this.radioButtonD.Location = new System.Drawing.Point(25, 599);
             this.radioButtonD.Name = "radioButtonD";
             this.radioButtonD.Size = new System.Drawing.Size(39, 17);
             this.radioButtonD.TabIndex = 13;
@@ -360,7 +353,7 @@
             // radioButtonE
             // 
             this.radioButtonE.AutoSize = true;
-            this.radioButtonE.Location = new System.Drawing.Point(43, 347);
+            this.radioButtonE.Location = new System.Drawing.Point(25, 622);
             this.radioButtonE.Name = "radioButtonE";
             this.radioButtonE.Size = new System.Drawing.Size(38, 17);
             this.radioButtonE.TabIndex = 12;
@@ -371,12 +364,13 @@
             // radioButtonA
             // 
             this.radioButtonA.AutoSize = true;
-            this.radioButtonA.Location = new System.Drawing.Point(43, 255);
+            this.radioButtonA.Location = new System.Drawing.Point(26, 452);
             this.radioButtonA.Name = "radioButtonA";
             this.radioButtonA.Size = new System.Drawing.Size(38, 17);
             this.radioButtonA.TabIndex = 11;
             this.radioButtonA.TabStop = true;
             this.radioButtonA.Text = "A )";
+            this.radioButtonA.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.radioButtonA.UseVisualStyleBackColor = true;
             // 
             // lblNumQuestoes
@@ -787,6 +781,32 @@
             this.tabControl1.Size = new System.Drawing.Size(699, 698);
             this.tabControl1.TabIndex = 2;
             // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(25, 56);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(648, 360);
+            this.richTextBox2.TabIndex = 16;
+            this.richTextBox2.Text = "";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(27, 232);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "obter length";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(293, 512);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
+            this.checkedListBox1.TabIndex = 17;
+            // 
             // frmInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -885,5 +905,7 @@
         private System.Windows.Forms.RadioButton radioButtonE;
         private System.Windows.Forms.RadioButton radioButtonA;
         private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
