@@ -22,19 +22,14 @@ namespace Gestor_de_estudos
         {
             InitializeComponent();
             //FormBorderStyle = FormBorderStyle.None;
-            richTextBox2.Text = "dsfsdfasfasfasfafO ser humano e criado por amor, feito a imagem e à semelhança de Deus. É capas de se conhecer, de se possui e de livremente se dar e entrar em comunhão com outras pessoas.   A existência humana se baseia sobre três relações fundamentais intimamente ligadas: as relações com Deus, com o próximo e com a terra. Segundo a bíblia essas relações vitais romperam - se dentro e fora de nós.Esta ruptura é o pecado. Existe uma acusação lançada contra o pensamento judaico-cristão que é equivocada, onde fala que o homem é convidado a dominar a terra e isso favoreceria a exploração selvagem da natureza.A palavra cita cultivar e quer dizer, lavrar ou trabalhar um terreno. O ser humano e criado por amor, feito a imagem e à semelhança de Deus. É capas de se conhecer, de se possui e de livremente se dar e entrar em comunhão com outras pessoas.   A existência humana se baseia sobre três relações fundamentais intimamente ligadas: as relações com Deus, com o próximo e com a terra. Segundo a bíblia essas relações vitais romperam - se dentro e fora de nós.Esta ruptura é o pecado. Existe uma acusação lançada contra o pensamento judaico-cristão que é equivocada, onde fala que o homem é convidado a dominar a terra e isso favoreceria a exploração selvagem da natureza.A palavra cita cultivar e quer dizer, lavrar ou trabalhar um terreno.";
-            Control control = new Control();
-            CheckedListBox checkedListBox = new CheckedListBox();
-            checkedListBox.Items.Add("fsadfsadfasdfr humano e criado por amor, feito a imagem e à semelhança de Deus. É capas de se conhecer, de se possui e de livremen");
-            checkedListBox.Items.Add("fsadfsadfasdf");
-            checkedListBox.Items.Add("fsadfsadfasdf");
-            checkedListBox.Items.Add("fsadfsadfasdf");
-            control = checkedListBox;
-            control.Text = "dsfsdfasfasfasfafO ser humano e criado por amor, feito a imagem e à semelhança de Deus. É capas de se conhecer, de se possui e de livremente se dar e entrar em comunhão com outras pessoas.   A existência humana se baseia sobre três relações fundamentais intimamente ligadas: as relações com Deus, com o próximo e com a terra. Segundo a bíblia essas relações vitais romperam - se dentro e fora de nós.Esta ruptura é o pecado. Existe uma acusação lançada contra o pensamento judaico-cristão q";
-            control.Text =  "dsfsdfasfasfasfafO ser humano e criado por amor, feito a imagem e à semelhança de Deus. É capas de se conhecer, de se possui e de livremente se dar e entrar em comunhão com outras pessoas.   A existência humana se baseia sobre três relações fundamentais intimamente ligadas: as relações com Deus, com o próximo e com a terra. Segundo a bíblia essas relações vitais romperam - se dentro e fora de nós.Esta ruptura é o pecado. Existe uma acusação lançada contra o pensamento judaico-cristão q";
-            control.Location = new Point(0, 150);
-            
-            richTextBox2.Controls.Add(control);
+            Label label = new Label();
+
+            label.MaximumSize = new Size(18, 0);
+            label.AutoSize = true;
+            label.Text = "1,2,3,4,5,6,7,88,9,0,98,67,54,,345,34,534,53,45,,76,567,65,56,7,56,34,5,45,,6,7,7,5,65,6,56,7,,3,654,654,65,6,765,7,567,657,65,765,87658888888888886,755555555555 ,657          ,76666666666665, 45555555555553 ,6555555555555554,66666666666663345,6";
+            //userControl1.Height = label.Bottom;
+            //userControl1.Controls.Add(label);
+
             WindowState = FormWindowState.Maximized;           
             
         }
@@ -150,10 +145,9 @@ namespace Gestor_de_estudos
             impressao.PrintPage(sender, e, richEditTexto);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void tabPage3_Click(object sender, EventArgs e)
         {
-            int lent = richTextBox2.TextLength;
-            richTextBox2.ZoomFactor = 50;
+
         }
     }
 }

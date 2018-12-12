@@ -51,17 +51,7 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.radioButtonB = new System.Windows.Forms.RadioButton();
-            this.radioButtonC = new System.Windows.Forms.RadioButton();
-            this.radioButtonD = new System.Windows.Forms.RadioButton();
-            this.radioButtonE = new System.Windows.Forms.RadioButton();
-            this.radioButtonA = new System.Windows.Forms.RadioButton();
-            this.lblNumQuestoes = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cbxBanca = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tbQtdQuestoes = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.cbxMateria = new System.Windows.Forms.ComboBox();
@@ -95,11 +85,32 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.miniToolStrip = new System.Windows.Forms.MenuStrip();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.btnArea = new System.Windows.Forms.Button();
+            this.btnBanca = new System.Windows.Forms.Button();
+            this.btnAssunto = new System.Windows.Forms.Button();
+            this.btnMateria = new System.Windows.Forms.Button();
+            this.cbBanca = new System.Windows.Forms.ComboBox();
+            this.cbMateria = new System.Windows.Forms.ComboBox();
+            this.cbArea = new System.Windows.Forms.ComboBox();
+            this.cbAssunto = new System.Windows.Forms.ComboBox();
+            this.btnAddQuestao = new System.Windows.Forms.Button();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox6 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox7 = new System.Windows.Forms.RichTextBox();
+            this.lblEnunciado = new System.Windows.Forms.Label();
+            this.rdbletraA = new System.Windows.Forms.RadioButton();
+            this.rdbletraB = new System.Windows.Forms.RadioButton();
+            this.rdbletraC = new System.Windows.Forms.RadioButton();
+            this.rdbletraD = new System.Windows.Forms.RadioButton();
+            this.rdbletraE = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnGerarSimulado = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.menuStripPrincipal.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -114,7 +125,6 @@
             this.panel1.AutoScroll = true;
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.btnNavegador);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnPlanos);
@@ -282,33 +292,45 @@
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(691, 672);
             this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Visualisador";
+            this.tabPage5.Text = "Questoes a revisar";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label1);
+            this.tabPage3.Controls.Add(this.rdbletraE);
+            this.tabPage3.Controls.Add(this.rdbletraD);
+            this.tabPage3.Controls.Add(this.rdbletraC);
+            this.tabPage3.Controls.Add(this.rdbletraB);
+            this.tabPage3.Controls.Add(this.rdbletraA);
+            this.tabPage3.Controls.Add(this.lblEnunciado);
+            this.tabPage3.Controls.Add(this.richTextBox7);
+            this.tabPage3.Controls.Add(this.richTextBox6);
+            this.tabPage3.Controls.Add(this.richTextBox5);
+            this.tabPage3.Controls.Add(this.richTextBox4);
+            this.tabPage3.Controls.Add(this.richTextBox3);
+            this.tabPage3.Controls.Add(this.richTextBox2);
+            this.tabPage3.Controls.Add(this.btnAddQuestao);
+            this.tabPage3.Controls.Add(this.cbAssunto);
+            this.tabPage3.Controls.Add(this.cbArea);
+            this.tabPage3.Controls.Add(this.cbMateria);
+            this.tabPage3.Controls.Add(this.cbBanca);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(691, 672);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Adicionar Questão";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.checkedListBox1);
-            this.tabPage2.Controls.Add(this.radioButtonB);
-            this.tabPage2.Controls.Add(this.radioButtonC);
-            this.tabPage2.Controls.Add(this.radioButtonD);
-            this.tabPage2.Controls.Add(this.radioButtonE);
-            this.tabPage2.Controls.Add(this.radioButtonA);
-            this.tabPage2.Controls.Add(this.lblNumQuestoes);
-            this.tabPage2.Controls.Add(this.textBox1);
-            this.tabPage2.Controls.Add(this.cbxBanca);
-            this.tabPage2.Controls.Add(this.comboBox3);
-            this.tabPage2.Controls.Add(this.comboBox2);
-            this.tabPage2.Controls.Add(this.comboBox1);
-            this.tabPage2.Controls.Add(this.richTextBox2);
+            this.tabPage2.Controls.Add(this.btnGerarSimulado);
+            this.tabPage2.Controls.Add(this.btnMateria);
+            this.tabPage2.Controls.Add(this.btnAssunto);
+            this.tabPage2.Controls.Add(this.btnBanca);
+            this.tabPage2.Controls.Add(this.btnArea);
+            this.tabPage2.Controls.Add(this.tbQtdQuestoes);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -317,121 +339,16 @@
             this.tabPage2.Text = "Novo Simulado";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // radioButtonB
+            // tbQtdQuestoes
             // 
-            this.radioButtonB.AutoSize = true;
-            this.radioButtonB.Location = new System.Drawing.Point(25, 553);
-            this.radioButtonB.Name = "radioButtonB";
-            this.radioButtonB.Size = new System.Drawing.Size(38, 17);
-            this.radioButtonB.TabIndex = 15;
-            this.radioButtonB.TabStop = true;
-            this.radioButtonB.Text = "B )";
-            this.radioButtonB.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonC
-            // 
-            this.radioButtonC.AutoSize = true;
-            this.radioButtonC.Location = new System.Drawing.Point(25, 576);
-            this.radioButtonC.Name = "radioButtonC";
-            this.radioButtonC.Size = new System.Drawing.Size(38, 17);
-            this.radioButtonC.TabIndex = 14;
-            this.radioButtonC.TabStop = true;
-            this.radioButtonC.Text = "C )";
-            this.radioButtonC.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonD
-            // 
-            this.radioButtonD.AutoSize = true;
-            this.radioButtonD.Location = new System.Drawing.Point(25, 599);
-            this.radioButtonD.Name = "radioButtonD";
-            this.radioButtonD.Size = new System.Drawing.Size(39, 17);
-            this.radioButtonD.TabIndex = 13;
-            this.radioButtonD.TabStop = true;
-            this.radioButtonD.Text = "D )";
-            this.radioButtonD.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonE
-            // 
-            this.radioButtonE.AutoSize = true;
-            this.radioButtonE.Location = new System.Drawing.Point(25, 622);
-            this.radioButtonE.Name = "radioButtonE";
-            this.radioButtonE.Size = new System.Drawing.Size(38, 17);
-            this.radioButtonE.TabIndex = 12;
-            this.radioButtonE.TabStop = true;
-            this.radioButtonE.Text = "E )";
-            this.radioButtonE.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonA
-            // 
-            this.radioButtonA.AutoSize = true;
-            this.radioButtonA.Location = new System.Drawing.Point(26, 452);
-            this.radioButtonA.Name = "radioButtonA";
-            this.radioButtonA.Size = new System.Drawing.Size(38, 17);
-            this.radioButtonA.TabIndex = 11;
-            this.radioButtonA.TabStop = true;
-            this.radioButtonA.Text = "A )";
-            this.radioButtonA.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.radioButtonA.UseVisualStyleBackColor = true;
-            // 
-            // lblNumQuestoes
-            // 
-            this.lblNumQuestoes.AutoSize = true;
-            this.lblNumQuestoes.Location = new System.Drawing.Point(566, 19);
-            this.lblNumQuestoes.Name = "lblNumQuestoes";
-            this.lblNumQuestoes.Size = new System.Drawing.Size(107, 13);
-            this.lblNumQuestoes.TabIndex = 10;
-            this.lblNumQuestoes.Text = "Numero de Questões";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(495, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(65, 20);
-            this.textBox1.TabIndex = 9;
-            // 
-            // cbxBanca
-            // 
-            this.cbxBanca.FormattingEnabled = true;
-            this.cbxBanca.Items.AddRange(new object[] {
-            "CESPE"});
-            this.cbxBanca.Location = new System.Drawing.Point(369, 16);
-            this.cbxBanca.Name = "cbxBanca";
-            this.cbxBanca.Size = new System.Drawing.Size(120, 21);
-            this.cbxBanca.TabIndex = 8;
-            this.cbxBanca.Text = "Selecione a Banca";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "História do Brasil"});
-            this.comboBox3.Location = new System.Drawing.Point(293, 16);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(70, 21);
-            this.comboBox3.TabIndex = 7;
-            this.comboBox3.Text = "Assunto";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "História do Brasil"});
-            this.comboBox2.Location = new System.Drawing.Point(134, 16);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(153, 21);
-            this.comboBox2.TabIndex = 6;
-            this.comboBox2.Text = "Assunto";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Humanas"});
-            this.comboBox1.Location = new System.Drawing.Point(25, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(103, 21);
-            this.comboBox1.TabIndex = 5;
-            this.comboBox1.Text = "Area";
+            this.tbQtdQuestoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbQtdQuestoes.Location = new System.Drawing.Point(469, 14);
+            this.tbQtdQuestoes.Multiline = true;
+            this.tbQtdQuestoes.Name = "tbQtdQuestoes";
+            this.tbQtdQuestoes.Size = new System.Drawing.Size(113, 36);
+            this.tbQtdQuestoes.TabIndex = 9;
+            this.tbQtdQuestoes.Text = "QUESTÕES";
+            this.tbQtdQuestoes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tabPage1
             // 
@@ -781,31 +698,234 @@
             this.tabControl1.Size = new System.Drawing.Size(699, 698);
             this.tabControl1.TabIndex = 2;
             // 
+            // btnArea
+            // 
+            this.btnArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArea.Location = new System.Drawing.Point(13, 14);
+            this.btnArea.Name = "btnArea";
+            this.btnArea.Size = new System.Drawing.Size(108, 36);
+            this.btnArea.TabIndex = 11;
+            this.btnArea.Text = "AREA";
+            this.btnArea.UseVisualStyleBackColor = true;
+            // 
+            // btnBanca
+            // 
+            this.btnBanca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBanca.Location = new System.Drawing.Point(355, 14);
+            this.btnBanca.Name = "btnBanca";
+            this.btnBanca.Size = new System.Drawing.Size(108, 36);
+            this.btnBanca.TabIndex = 12;
+            this.btnBanca.Text = "BANCA";
+            this.btnBanca.UseVisualStyleBackColor = true;
+            // 
+            // btnAssunto
+            // 
+            this.btnAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAssunto.Location = new System.Drawing.Point(241, 14);
+            this.btnAssunto.Name = "btnAssunto";
+            this.btnAssunto.Size = new System.Drawing.Size(108, 36);
+            this.btnAssunto.TabIndex = 13;
+            this.btnAssunto.Text = "ASSUNTO";
+            this.btnAssunto.UseVisualStyleBackColor = true;
+            // 
+            // btnMateria
+            // 
+            this.btnMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMateria.Location = new System.Drawing.Point(127, 14);
+            this.btnMateria.Name = "btnMateria";
+            this.btnMateria.Size = new System.Drawing.Size(108, 36);
+            this.btnMateria.TabIndex = 14;
+            this.btnMateria.Text = "MATERIA";
+            this.btnMateria.UseVisualStyleBackColor = true;
+            // 
+            // cbBanca
+            // 
+            this.cbBanca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbBanca.FormattingEnabled = true;
+            this.cbBanca.Items.AddRange(new object[] {
+            "CESPE",
+            "INEP",
+            "CESGRANRIO",
+            "ADICIONAR NOVA"});
+            this.cbBanca.Location = new System.Drawing.Point(17, 14);
+            this.cbBanca.Name = "cbBanca";
+            this.cbBanca.Size = new System.Drawing.Size(121, 23);
+            this.cbBanca.TabIndex = 0;
+            this.cbBanca.Text = "BANCA";
+            // 
+            // cbMateria
+            // 
+            this.cbMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMateria.FormattingEnabled = true;
+            this.cbMateria.Location = new System.Drawing.Point(271, 14);
+            this.cbMateria.Name = "cbMateria";
+            this.cbMateria.Size = new System.Drawing.Size(121, 23);
+            this.cbMateria.TabIndex = 1;
+            this.cbMateria.Text = "MATERIA";
+            // 
+            // cbArea
+            // 
+            this.cbArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbArea.FormattingEnabled = true;
+            this.cbArea.Location = new System.Drawing.Point(144, 14);
+            this.cbArea.Name = "cbArea";
+            this.cbArea.Size = new System.Drawing.Size(121, 23);
+            this.cbArea.TabIndex = 2;
+            this.cbArea.Text = "AREA";
+            // 
+            // cbAssunto
+            // 
+            this.cbAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAssunto.FormattingEnabled = true;
+            this.cbAssunto.Location = new System.Drawing.Point(398, 14);
+            this.cbAssunto.Name = "cbAssunto";
+            this.cbAssunto.Size = new System.Drawing.Size(121, 23);
+            this.cbAssunto.TabIndex = 3;
+            this.cbAssunto.Text = "ASSUNTO";
+            // 
+            // btnAddQuestao
+            // 
+            this.btnAddQuestao.AutoEllipsis = true;
+            this.btnAddQuestao.AutoSize = true;
+            this.btnAddQuestao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddQuestao.Location = new System.Drawing.Point(525, 14);
+            this.btnAddQuestao.Name = "btnAddQuestao";
+            this.btnAddQuestao.Size = new System.Drawing.Size(148, 23);
+            this.btnAddQuestao.TabIndex = 4;
+            this.btnAddQuestao.Text = "ADICIONAR QUESTÃO";
+            this.btnAddQuestao.UseVisualStyleBackColor = true;
+            // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(25, 56);
+            this.richTextBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richTextBox2.Location = new System.Drawing.Point(39, 72);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(648, 360);
-            this.richTextBox2.TabIndex = 16;
+            this.richTextBox2.Size = new System.Drawing.Size(634, 216);
+            this.richTextBox2.TabIndex = 5;
             this.richTextBox2.Text = "";
             // 
-            // button3
+            // richTextBox3
             // 
-            this.button3.Location = new System.Drawing.Point(27, 232);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "obter length";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.richTextBox3.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richTextBox3.Location = new System.Drawing.Point(65, 316);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(587, 52);
+            this.richTextBox3.TabIndex = 6;
+            this.richTextBox3.Text = "";
             // 
-            // checkedListBox1
+            // richTextBox4
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(293, 512);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
-            this.checkedListBox1.TabIndex = 17;
+            this.richTextBox4.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richTextBox4.Location = new System.Drawing.Point(65, 374);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.Size = new System.Drawing.Size(587, 52);
+            this.richTextBox4.TabIndex = 7;
+            this.richTextBox4.Text = "";
+            // 
+            // richTextBox5
+            // 
+            this.richTextBox5.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richTextBox5.Location = new System.Drawing.Point(65, 432);
+            this.richTextBox5.Name = "richTextBox5";
+            this.richTextBox5.Size = new System.Drawing.Size(587, 52);
+            this.richTextBox5.TabIndex = 8;
+            this.richTextBox5.Text = "";
+            // 
+            // richTextBox6
+            // 
+            this.richTextBox6.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richTextBox6.Location = new System.Drawing.Point(65, 548);
+            this.richTextBox6.Name = "richTextBox6";
+            this.richTextBox6.Size = new System.Drawing.Size(587, 52);
+            this.richTextBox6.TabIndex = 9;
+            this.richTextBox6.Text = "";
+            // 
+            // richTextBox7
+            // 
+            this.richTextBox7.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richTextBox7.Location = new System.Drawing.Point(65, 490);
+            this.richTextBox7.Name = "richTextBox7";
+            this.richTextBox7.Size = new System.Drawing.Size(587, 52);
+            this.richTextBox7.TabIndex = 10;
+            this.richTextBox7.Text = "";
+            // 
+            // lblEnunciado
+            // 
+            this.lblEnunciado.Location = new System.Drawing.Point(22, 72);
+            this.lblEnunciado.Name = "lblEnunciado";
+            this.lblEnunciado.Size = new System.Drawing.Size(15, 216);
+            this.lblEnunciado.TabIndex = 11;
+            this.lblEnunciado.Text = "ENUNCIADO";
+            this.lblEnunciado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // rdbletraA
+            // 
+            this.rdbletraA.AutoSize = true;
+            this.rdbletraA.Location = new System.Drawing.Point(38, 333);
+            this.rdbletraA.Name = "rdbletraA";
+            this.rdbletraA.Size = new System.Drawing.Size(14, 13);
+            this.rdbletraA.TabIndex = 12;
+            this.rdbletraA.TabStop = true;
+            this.rdbletraA.UseVisualStyleBackColor = true;
+            // 
+            // rdbletraB
+            // 
+            this.rdbletraB.AutoSize = true;
+            this.rdbletraB.Location = new System.Drawing.Point(38, 393);
+            this.rdbletraB.Name = "rdbletraB";
+            this.rdbletraB.Size = new System.Drawing.Size(14, 13);
+            this.rdbletraB.TabIndex = 14;
+            this.rdbletraB.TabStop = true;
+            this.rdbletraB.UseVisualStyleBackColor = true;
+            // 
+            // rdbletraC
+            // 
+            this.rdbletraC.AutoSize = true;
+            this.rdbletraC.Location = new System.Drawing.Point(38, 453);
+            this.rdbletraC.Name = "rdbletraC";
+            this.rdbletraC.Size = new System.Drawing.Size(14, 13);
+            this.rdbletraC.TabIndex = 15;
+            this.rdbletraC.TabStop = true;
+            this.rdbletraC.UseVisualStyleBackColor = true;
+            // 
+            // rdbletraD
+            // 
+            this.rdbletraD.AutoSize = true;
+            this.rdbletraD.Location = new System.Drawing.Point(38, 507);
+            this.rdbletraD.Name = "rdbletraD";
+            this.rdbletraD.Size = new System.Drawing.Size(14, 13);
+            this.rdbletraD.TabIndex = 16;
+            this.rdbletraD.TabStop = true;
+            this.rdbletraD.UseVisualStyleBackColor = true;
+            // 
+            // rdbletraE
+            // 
+            this.rdbletraE.AutoSize = true;
+            this.rdbletraE.Location = new System.Drawing.Point(38, 567);
+            this.rdbletraE.Name = "rdbletraE";
+            this.rdbletraE.Size = new System.Drawing.Size(14, 13);
+            this.rdbletraE.TabIndex = 17;
+            this.rdbletraE.TabStop = true;
+            this.rdbletraE.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(658, 316);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(15, 284);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "ALTERNATIVAS";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnGerarSimulado
+            // 
+            this.btnGerarSimulado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGerarSimulado.Location = new System.Drawing.Point(587, 13);
+            this.btnGerarSimulado.Name = "btnGerarSimulado";
+            this.btnGerarSimulado.Size = new System.Drawing.Size(87, 36);
+            this.btnGerarSimulado.TabIndex = 15;
+            this.btnGerarSimulado.Text = "GERAR";
+            this.btnGerarSimulado.UseVisualStyleBackColor = true;
             // 
             // frmInicial
             // 
@@ -822,6 +942,8 @@
             this.panel1.ResumeLayout(false);
             this.menuStripPrincipal.ResumeLayout(false);
             this.menuStripPrincipal.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -860,8 +982,6 @@
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox cbxMateria;
@@ -895,17 +1015,29 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.MenuStrip miniToolStrip;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label lblNumQuestoes;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox cbxBanca;
-        private System.Windows.Forms.RadioButton radioButtonB;
-        private System.Windows.Forms.RadioButton radioButtonC;
-        private System.Windows.Forms.RadioButton radioButtonD;
-        private System.Windows.Forms.RadioButton radioButtonE;
-        private System.Windows.Forms.RadioButton radioButtonA;
+        private System.Windows.Forms.TextBox tbQtdQuestoes;
+        private System.Windows.Forms.Button btnMateria;
+        private System.Windows.Forms.Button btnAssunto;
+        private System.Windows.Forms.Button btnBanca;
+        private System.Windows.Forms.Button btnArea;
+        private System.Windows.Forms.RichTextBox richTextBox7;
+        private System.Windows.Forms.RichTextBox richTextBox6;
+        private System.Windows.Forms.RichTextBox richTextBox5;
+        private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Button btnAddQuestao;
+        private System.Windows.Forms.ComboBox cbAssunto;
+        private System.Windows.Forms.ComboBox cbArea;
+        private System.Windows.Forms.ComboBox cbMateria;
+        private System.Windows.Forms.ComboBox cbBanca;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton rdbletraE;
+        private System.Windows.Forms.RadioButton rdbletraD;
+        private System.Windows.Forms.RadioButton rdbletraC;
+        private System.Windows.Forms.RadioButton rdbletraB;
+        private System.Windows.Forms.RadioButton rdbletraA;
+        private System.Windows.Forms.Label lblEnunciado;
+        private System.Windows.Forms.Button btnGerarSimulado;
     }
 }

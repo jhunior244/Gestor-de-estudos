@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Tela_Cadastro_Questoes
 {
-    class BotoesAlternativas
+    class Comentarios
     {
-        List<RadioButton> alternativas = new List<RadioButton>();
-
-
+        private int idQuest;
+        private List<string> coments;
     }
 }
