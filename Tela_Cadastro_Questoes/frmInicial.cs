@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using MySql.Data.MySqlClient;
+using System.Data.OleDb;
 
 
 namespace Gestor_de_estudos
@@ -23,13 +25,12 @@ namespace Gestor_de_estudos
             InitializeComponent();
             //FormBorderStyle = FormBorderStyle.None;
             Label label = new Label();
-
+            OleDbConnection con = new OleDbConnection();
             label.MaximumSize = new Size(18, 0);
             label.AutoSize = true;
             label.Text = "1,2,3,4,5,6,7,88,9,0,98,67,54,,345,34,534,53,45,,76,567,65,56,7,56,34,5,45,,6,7,7,5,65,6,56,7,,3,654,654,65,6,765,7,567,657,65,765,87658888888888886,755555555555 ,657          ,76666666666665, 45555555555553 ,6555555555555554,66666666666663345,6";
             //userControl1.Height = label.Bottom;
             //userControl1.Controls.Add(label);
-
             WindowState = FormWindowState.Maximized;           
             
         }
@@ -144,10 +145,23 @@ namespace Gestor_de_estudos
         {
             impressao.PrintPage(sender, e, richEditTexto);
         }
-
         private void tabPage3_Click(object sender, EventArgs e)
         {
 
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MySqlConnection sqlConnection = new MySqlConnection("server=localhost;port=3306;User Id=root;database=dataTeste;password=881100jr");
+                sqlConnection.Open();
+                MessageBox.Show("Conectado");
+                sqlConnection.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Nao conectado");
+            }
         }
     }
 }

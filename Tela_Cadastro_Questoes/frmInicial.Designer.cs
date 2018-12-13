@@ -50,7 +50,30 @@
             this.prntprvdlg1 = new System.Windows.Forms.PrintPreviewDialog();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rdbletraE = new System.Windows.Forms.RadioButton();
+            this.rdbletraD = new System.Windows.Forms.RadioButton();
+            this.rdbletraC = new System.Windows.Forms.RadioButton();
+            this.rdbletraB = new System.Windows.Forms.RadioButton();
+            this.rdbletraA = new System.Windows.Forms.RadioButton();
+            this.lblEnunciado = new System.Windows.Forms.Label();
+            this.richTextBox7 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox6 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.btnAddQuestao = new System.Windows.Forms.Button();
+            this.cbAssunto = new System.Windows.Forms.ComboBox();
+            this.cbArea = new System.Windows.Forms.ComboBox();
+            this.cbMateria = new System.Windows.Forms.ComboBox();
+            this.cbBanca = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnGerarSimulado = new System.Windows.Forms.Button();
+            this.btnMateria = new System.Windows.Forms.Button();
+            this.btnAssunto = new System.Windows.Forms.Button();
+            this.btnBanca = new System.Windows.Forms.Button();
+            this.btnArea = new System.Windows.Forms.Button();
             this.tbQtdQuestoes = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
@@ -85,29 +108,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.miniToolStrip = new System.Windows.Forms.MenuStrip();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.btnArea = new System.Windows.Forms.Button();
-            this.btnBanca = new System.Windows.Forms.Button();
-            this.btnAssunto = new System.Windows.Forms.Button();
-            this.btnMateria = new System.Windows.Forms.Button();
-            this.cbBanca = new System.Windows.Forms.ComboBox();
-            this.cbMateria = new System.Windows.Forms.ComboBox();
-            this.cbArea = new System.Windows.Forms.ComboBox();
-            this.cbAssunto = new System.Windows.Forms.ComboBox();
-            this.btnAddQuestao = new System.Windows.Forms.Button();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox6 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox7 = new System.Windows.Forms.RichTextBox();
-            this.lblEnunciado = new System.Windows.Forms.Label();
-            this.rdbletraA = new System.Windows.Forms.RadioButton();
-            this.rdbletraB = new System.Windows.Forms.RadioButton();
-            this.rdbletraC = new System.Windows.Forms.RadioButton();
-            this.rdbletraD = new System.Windows.Forms.RadioButton();
-            this.rdbletraE = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnGerarSimulado = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.menuStripPrincipal.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -125,6 +126,7 @@
             this.panel1.AutoScroll = true;
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.btnNavegador);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnPlanos);
@@ -323,6 +325,184 @@
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(658, 316);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(15, 284);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "ALTERNATIVAS";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // rdbletraE
+            // 
+            this.rdbletraE.AutoSize = true;
+            this.rdbletraE.Location = new System.Drawing.Point(38, 567);
+            this.rdbletraE.Name = "rdbletraE";
+            this.rdbletraE.Size = new System.Drawing.Size(14, 13);
+            this.rdbletraE.TabIndex = 17;
+            this.rdbletraE.TabStop = true;
+            this.rdbletraE.UseVisualStyleBackColor = true;
+            // 
+            // rdbletraD
+            // 
+            this.rdbletraD.AutoSize = true;
+            this.rdbletraD.Location = new System.Drawing.Point(38, 507);
+            this.rdbletraD.Name = "rdbletraD";
+            this.rdbletraD.Size = new System.Drawing.Size(14, 13);
+            this.rdbletraD.TabIndex = 16;
+            this.rdbletraD.TabStop = true;
+            this.rdbletraD.UseVisualStyleBackColor = true;
+            // 
+            // rdbletraC
+            // 
+            this.rdbletraC.AutoSize = true;
+            this.rdbletraC.Location = new System.Drawing.Point(38, 453);
+            this.rdbletraC.Name = "rdbletraC";
+            this.rdbletraC.Size = new System.Drawing.Size(14, 13);
+            this.rdbletraC.TabIndex = 15;
+            this.rdbletraC.TabStop = true;
+            this.rdbletraC.UseVisualStyleBackColor = true;
+            // 
+            // rdbletraB
+            // 
+            this.rdbletraB.AutoSize = true;
+            this.rdbletraB.Location = new System.Drawing.Point(38, 393);
+            this.rdbletraB.Name = "rdbletraB";
+            this.rdbletraB.Size = new System.Drawing.Size(14, 13);
+            this.rdbletraB.TabIndex = 14;
+            this.rdbletraB.TabStop = true;
+            this.rdbletraB.UseVisualStyleBackColor = true;
+            // 
+            // rdbletraA
+            // 
+            this.rdbletraA.AutoSize = true;
+            this.rdbletraA.Location = new System.Drawing.Point(38, 333);
+            this.rdbletraA.Name = "rdbletraA";
+            this.rdbletraA.Size = new System.Drawing.Size(14, 13);
+            this.rdbletraA.TabIndex = 12;
+            this.rdbletraA.TabStop = true;
+            this.rdbletraA.UseVisualStyleBackColor = true;
+            // 
+            // lblEnunciado
+            // 
+            this.lblEnunciado.Location = new System.Drawing.Point(22, 72);
+            this.lblEnunciado.Name = "lblEnunciado";
+            this.lblEnunciado.Size = new System.Drawing.Size(15, 216);
+            this.lblEnunciado.TabIndex = 11;
+            this.lblEnunciado.Text = "ENUNCIADO";
+            this.lblEnunciado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // richTextBox7
+            // 
+            this.richTextBox7.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richTextBox7.Location = new System.Drawing.Point(65, 490);
+            this.richTextBox7.Name = "richTextBox7";
+            this.richTextBox7.Size = new System.Drawing.Size(587, 52);
+            this.richTextBox7.TabIndex = 10;
+            this.richTextBox7.Text = "";
+            // 
+            // richTextBox6
+            // 
+            this.richTextBox6.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richTextBox6.Location = new System.Drawing.Point(65, 548);
+            this.richTextBox6.Name = "richTextBox6";
+            this.richTextBox6.Size = new System.Drawing.Size(587, 52);
+            this.richTextBox6.TabIndex = 9;
+            this.richTextBox6.Text = "";
+            // 
+            // richTextBox5
+            // 
+            this.richTextBox5.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richTextBox5.Location = new System.Drawing.Point(65, 432);
+            this.richTextBox5.Name = "richTextBox5";
+            this.richTextBox5.Size = new System.Drawing.Size(587, 52);
+            this.richTextBox5.TabIndex = 8;
+            this.richTextBox5.Text = "";
+            // 
+            // richTextBox4
+            // 
+            this.richTextBox4.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richTextBox4.Location = new System.Drawing.Point(65, 374);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.Size = new System.Drawing.Size(587, 52);
+            this.richTextBox4.TabIndex = 7;
+            this.richTextBox4.Text = "";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richTextBox3.Location = new System.Drawing.Point(65, 316);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(587, 52);
+            this.richTextBox3.TabIndex = 6;
+            this.richTextBox3.Text = "";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richTextBox2.Location = new System.Drawing.Point(39, 72);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(634, 216);
+            this.richTextBox2.TabIndex = 5;
+            this.richTextBox2.Text = "";
+            // 
+            // btnAddQuestao
+            // 
+            this.btnAddQuestao.AutoSize = true;
+            this.btnAddQuestao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddQuestao.Location = new System.Drawing.Point(525, 14);
+            this.btnAddQuestao.Name = "btnAddQuestao";
+            this.btnAddQuestao.Size = new System.Drawing.Size(148, 23);
+            this.btnAddQuestao.TabIndex = 4;
+            this.btnAddQuestao.Text = "ADICIONAR QUESTÃO";
+            this.btnAddQuestao.UseVisualStyleBackColor = true;
+            // 
+            // cbAssunto
+            // 
+            this.cbAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAssunto.FormattingEnabled = true;
+            this.cbAssunto.Location = new System.Drawing.Point(398, 14);
+            this.cbAssunto.Name = "cbAssunto";
+            this.cbAssunto.Size = new System.Drawing.Size(121, 23);
+            this.cbAssunto.TabIndex = 3;
+            this.cbAssunto.Text = "ASSUNTO";
+            // 
+            // cbArea
+            // 
+            this.cbArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbArea.FormattingEnabled = true;
+            this.cbArea.Location = new System.Drawing.Point(144, 14);
+            this.cbArea.Name = "cbArea";
+            this.cbArea.Size = new System.Drawing.Size(121, 23);
+            this.cbArea.TabIndex = 2;
+            this.cbArea.Text = "AREA";
+            // 
+            // cbMateria
+            // 
+            this.cbMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMateria.FormattingEnabled = true;
+            this.cbMateria.Location = new System.Drawing.Point(271, 14);
+            this.cbMateria.Name = "cbMateria";
+            this.cbMateria.Size = new System.Drawing.Size(121, 23);
+            this.cbMateria.TabIndex = 1;
+            this.cbMateria.Text = "MATERIA";
+            // 
+            // cbBanca
+            // 
+            this.cbBanca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbBanca.FormattingEnabled = true;
+            this.cbBanca.Items.AddRange(new object[] {
+            "CESPE",
+            "INEP",
+            "CESGRANRIO",
+            "ADICIONAR NOVA"});
+            this.cbBanca.Location = new System.Drawing.Point(17, 14);
+            this.cbBanca.Name = "cbBanca";
+            this.cbBanca.Size = new System.Drawing.Size(121, 23);
+            this.cbBanca.TabIndex = 0;
+            this.cbBanca.Text = "BANCA";
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.btnGerarSimulado);
@@ -338,6 +518,56 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Novo Simulado";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnGerarSimulado
+            // 
+            this.btnGerarSimulado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGerarSimulado.Location = new System.Drawing.Point(587, 13);
+            this.btnGerarSimulado.Name = "btnGerarSimulado";
+            this.btnGerarSimulado.Size = new System.Drawing.Size(87, 36);
+            this.btnGerarSimulado.TabIndex = 15;
+            this.btnGerarSimulado.Text = "GERAR";
+            this.btnGerarSimulado.UseVisualStyleBackColor = true;
+            // 
+            // btnMateria
+            // 
+            this.btnMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMateria.Location = new System.Drawing.Point(127, 14);
+            this.btnMateria.Name = "btnMateria";
+            this.btnMateria.Size = new System.Drawing.Size(108, 36);
+            this.btnMateria.TabIndex = 14;
+            this.btnMateria.Text = "MATERIA";
+            this.btnMateria.UseVisualStyleBackColor = true;
+            // 
+            // btnAssunto
+            // 
+            this.btnAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAssunto.Location = new System.Drawing.Point(241, 14);
+            this.btnAssunto.Name = "btnAssunto";
+            this.btnAssunto.Size = new System.Drawing.Size(108, 36);
+            this.btnAssunto.TabIndex = 13;
+            this.btnAssunto.Text = "ASSUNTO";
+            this.btnAssunto.UseVisualStyleBackColor = true;
+            // 
+            // btnBanca
+            // 
+            this.btnBanca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBanca.Location = new System.Drawing.Point(355, 14);
+            this.btnBanca.Name = "btnBanca";
+            this.btnBanca.Size = new System.Drawing.Size(108, 36);
+            this.btnBanca.TabIndex = 12;
+            this.btnBanca.Text = "BANCA";
+            this.btnBanca.UseVisualStyleBackColor = true;
+            // 
+            // btnArea
+            // 
+            this.btnArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArea.Location = new System.Drawing.Point(13, 14);
+            this.btnArea.Name = "btnArea";
+            this.btnArea.Size = new System.Drawing.Size(108, 36);
+            this.btnArea.TabIndex = 11;
+            this.btnArea.Text = "AREA";
+            this.btnArea.UseVisualStyleBackColor = true;
             // 
             // tbQtdQuestoes
             // 
@@ -698,234 +928,15 @@
             this.tabControl1.Size = new System.Drawing.Size(699, 698);
             this.tabControl1.TabIndex = 2;
             // 
-            // btnArea
+            // button3
             // 
-            this.btnArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnArea.Location = new System.Drawing.Point(13, 14);
-            this.btnArea.Name = "btnArea";
-            this.btnArea.Size = new System.Drawing.Size(108, 36);
-            this.btnArea.TabIndex = 11;
-            this.btnArea.Text = "AREA";
-            this.btnArea.UseVisualStyleBackColor = true;
-            // 
-            // btnBanca
-            // 
-            this.btnBanca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBanca.Location = new System.Drawing.Point(355, 14);
-            this.btnBanca.Name = "btnBanca";
-            this.btnBanca.Size = new System.Drawing.Size(108, 36);
-            this.btnBanca.TabIndex = 12;
-            this.btnBanca.Text = "BANCA";
-            this.btnBanca.UseVisualStyleBackColor = true;
-            // 
-            // btnAssunto
-            // 
-            this.btnAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAssunto.Location = new System.Drawing.Point(241, 14);
-            this.btnAssunto.Name = "btnAssunto";
-            this.btnAssunto.Size = new System.Drawing.Size(108, 36);
-            this.btnAssunto.TabIndex = 13;
-            this.btnAssunto.Text = "ASSUNTO";
-            this.btnAssunto.UseVisualStyleBackColor = true;
-            // 
-            // btnMateria
-            // 
-            this.btnMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMateria.Location = new System.Drawing.Point(127, 14);
-            this.btnMateria.Name = "btnMateria";
-            this.btnMateria.Size = new System.Drawing.Size(108, 36);
-            this.btnMateria.TabIndex = 14;
-            this.btnMateria.Text = "MATERIA";
-            this.btnMateria.UseVisualStyleBackColor = true;
-            // 
-            // cbBanca
-            // 
-            this.cbBanca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBanca.FormattingEnabled = true;
-            this.cbBanca.Items.AddRange(new object[] {
-            "CESPE",
-            "INEP",
-            "CESGRANRIO",
-            "ADICIONAR NOVA"});
-            this.cbBanca.Location = new System.Drawing.Point(17, 14);
-            this.cbBanca.Name = "cbBanca";
-            this.cbBanca.Size = new System.Drawing.Size(121, 23);
-            this.cbBanca.TabIndex = 0;
-            this.cbBanca.Text = "BANCA";
-            // 
-            // cbMateria
-            // 
-            this.cbMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMateria.FormattingEnabled = true;
-            this.cbMateria.Location = new System.Drawing.Point(271, 14);
-            this.cbMateria.Name = "cbMateria";
-            this.cbMateria.Size = new System.Drawing.Size(121, 23);
-            this.cbMateria.TabIndex = 1;
-            this.cbMateria.Text = "MATERIA";
-            // 
-            // cbArea
-            // 
-            this.cbArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbArea.FormattingEnabled = true;
-            this.cbArea.Location = new System.Drawing.Point(144, 14);
-            this.cbArea.Name = "cbArea";
-            this.cbArea.Size = new System.Drawing.Size(121, 23);
-            this.cbArea.TabIndex = 2;
-            this.cbArea.Text = "AREA";
-            // 
-            // cbAssunto
-            // 
-            this.cbAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbAssunto.FormattingEnabled = true;
-            this.cbAssunto.Location = new System.Drawing.Point(398, 14);
-            this.cbAssunto.Name = "cbAssunto";
-            this.cbAssunto.Size = new System.Drawing.Size(121, 23);
-            this.cbAssunto.TabIndex = 3;
-            this.cbAssunto.Text = "ASSUNTO";
-            // 
-            // btnAddQuestao
-            // 
-            this.btnAddQuestao.AutoEllipsis = true;
-            this.btnAddQuestao.AutoSize = true;
-            this.btnAddQuestao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddQuestao.Location = new System.Drawing.Point(525, 14);
-            this.btnAddQuestao.Name = "btnAddQuestao";
-            this.btnAddQuestao.Size = new System.Drawing.Size(148, 23);
-            this.btnAddQuestao.TabIndex = 4;
-            this.btnAddQuestao.Text = "ADICIONAR QUESTÃO";
-            this.btnAddQuestao.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.richTextBox2.Location = new System.Drawing.Point(39, 72);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(634, 216);
-            this.richTextBox2.TabIndex = 5;
-            this.richTextBox2.Text = "";
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.richTextBox3.Location = new System.Drawing.Point(65, 316);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(587, 52);
-            this.richTextBox3.TabIndex = 6;
-            this.richTextBox3.Text = "";
-            // 
-            // richTextBox4
-            // 
-            this.richTextBox4.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.richTextBox4.Location = new System.Drawing.Point(65, 374);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(587, 52);
-            this.richTextBox4.TabIndex = 7;
-            this.richTextBox4.Text = "";
-            // 
-            // richTextBox5
-            // 
-            this.richTextBox5.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.richTextBox5.Location = new System.Drawing.Point(65, 432);
-            this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(587, 52);
-            this.richTextBox5.TabIndex = 8;
-            this.richTextBox5.Text = "";
-            // 
-            // richTextBox6
-            // 
-            this.richTextBox6.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.richTextBox6.Location = new System.Drawing.Point(65, 548);
-            this.richTextBox6.Name = "richTextBox6";
-            this.richTextBox6.Size = new System.Drawing.Size(587, 52);
-            this.richTextBox6.TabIndex = 9;
-            this.richTextBox6.Text = "";
-            // 
-            // richTextBox7
-            // 
-            this.richTextBox7.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.richTextBox7.Location = new System.Drawing.Point(65, 490);
-            this.richTextBox7.Name = "richTextBox7";
-            this.richTextBox7.Size = new System.Drawing.Size(587, 52);
-            this.richTextBox7.TabIndex = 10;
-            this.richTextBox7.Text = "";
-            // 
-            // lblEnunciado
-            // 
-            this.lblEnunciado.Location = new System.Drawing.Point(22, 72);
-            this.lblEnunciado.Name = "lblEnunciado";
-            this.lblEnunciado.Size = new System.Drawing.Size(15, 216);
-            this.lblEnunciado.TabIndex = 11;
-            this.lblEnunciado.Text = "ENUNCIADO";
-            this.lblEnunciado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // rdbletraA
-            // 
-            this.rdbletraA.AutoSize = true;
-            this.rdbletraA.Location = new System.Drawing.Point(38, 333);
-            this.rdbletraA.Name = "rdbletraA";
-            this.rdbletraA.Size = new System.Drawing.Size(14, 13);
-            this.rdbletraA.TabIndex = 12;
-            this.rdbletraA.TabStop = true;
-            this.rdbletraA.UseVisualStyleBackColor = true;
-            // 
-            // rdbletraB
-            // 
-            this.rdbletraB.AutoSize = true;
-            this.rdbletraB.Location = new System.Drawing.Point(38, 393);
-            this.rdbletraB.Name = "rdbletraB";
-            this.rdbletraB.Size = new System.Drawing.Size(14, 13);
-            this.rdbletraB.TabIndex = 14;
-            this.rdbletraB.TabStop = true;
-            this.rdbletraB.UseVisualStyleBackColor = true;
-            // 
-            // rdbletraC
-            // 
-            this.rdbletraC.AutoSize = true;
-            this.rdbletraC.Location = new System.Drawing.Point(38, 453);
-            this.rdbletraC.Name = "rdbletraC";
-            this.rdbletraC.Size = new System.Drawing.Size(14, 13);
-            this.rdbletraC.TabIndex = 15;
-            this.rdbletraC.TabStop = true;
-            this.rdbletraC.UseVisualStyleBackColor = true;
-            // 
-            // rdbletraD
-            // 
-            this.rdbletraD.AutoSize = true;
-            this.rdbletraD.Location = new System.Drawing.Point(38, 507);
-            this.rdbletraD.Name = "rdbletraD";
-            this.rdbletraD.Size = new System.Drawing.Size(14, 13);
-            this.rdbletraD.TabIndex = 16;
-            this.rdbletraD.TabStop = true;
-            this.rdbletraD.UseVisualStyleBackColor = true;
-            // 
-            // rdbletraE
-            // 
-            this.rdbletraE.AutoSize = true;
-            this.rdbletraE.Location = new System.Drawing.Point(38, 567);
-            this.rdbletraE.Name = "rdbletraE";
-            this.rdbletraE.Size = new System.Drawing.Size(14, 13);
-            this.rdbletraE.TabIndex = 17;
-            this.rdbletraE.TabStop = true;
-            this.rdbletraE.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(658, 316);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(15, 284);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "ALTERNATIVAS";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnGerarSimulado
-            // 
-            this.btnGerarSimulado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGerarSimulado.Location = new System.Drawing.Point(587, 13);
-            this.btnGerarSimulado.Name = "btnGerarSimulado";
-            this.btnGerarSimulado.Size = new System.Drawing.Size(87, 36);
-            this.btnGerarSimulado.TabIndex = 15;
-            this.btnGerarSimulado.Text = "GERAR";
-            this.btnGerarSimulado.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(30, 232);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "teste BD";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // frmInicial
             // 
@@ -1039,5 +1050,6 @@
         private System.Windows.Forms.RadioButton rdbletraA;
         private System.Windows.Forms.Label lblEnunciado;
         private System.Windows.Forms.Button btnGerarSimulado;
+        private System.Windows.Forms.Button button3;
     }
 }

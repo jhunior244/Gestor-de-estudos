@@ -14,8 +14,18 @@ namespace Tela_Cadastro_Questoes
         private string assunto;
         private string banca;
         private string enunciado;
-        private Alternativas objAlternativas;
-        private ValidadeResposta objValRespostas;
-        private Comentarios objComentarios;
+        private string alternativaA;
+        private string alternativaB;
+        private string alternativaC;
+        private string alternativaD;
+        private string alternativaE;
+        private bool validadeA;
+        private bool validadeB;
+        private bool validadeC;
+        private bool validadeD;
+        private bool validadeE;
+        private string comentarioUm;
+        private string comentarioDois;
+        private string comentarioTres;
     }
 }
