@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddQuestoes.cs" />
     <Compile Include="Alternativas.cs" />
     <Compile Include="Comentarios.cs" />
     <Compile Include="ControleImpressao.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="dbQuestoesDataSet.xsc">
       <DependentUpon>dbQuestoesDataSet.xsd</DependentUpon>
@@ -146,6 +148,8 @@
     <Content Include="dbQuestoes.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\icons8-adicionar-50.png" />
+    <None Include="Resources\download.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using MySql.Data.MySqlClient;
 using System.Data.OleDb;
-
+using Tela_Cadastro_Questoes;
 
 namespace Gestor_de_estudos
 {
@@ -20,17 +20,13 @@ namespace Gestor_de_estudos
         VisualisadorPDF viewPdf = new VisualisadorPDF();
         EditorDeResumos Editor = new EditorDeResumos();
         ControleImpressao impressao = new ControleImpressao();
+        OleDbConnection objConection = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\dbQuestoes.accdb");
+        AddQuestoes addQuestoes = new AddQuestoes();
         public frmInicial()
         {
             InitializeComponent();
-            //FormBorderStyle = FormBorderStyle.None;
-            Label label = new Label();
-            OleDbConnection con = new OleDbConnection();
-            label.MaximumSize = new Size(18, 0);
-            label.AutoSize = true;
-            label.Text = "1,2,3,4,5,6,7,88,9,0,98,67,54,,345,34,534,53,45,,76,567,65,56,7,56,34,5,45,,6,7,7,5,65,6,56,7,,3,654,654,65,6,765,7,567,657,65,765,87658888888888886,755555555555 ,657          ,76666666666665, 45555555555553 ,6555555555555554,66666666666663345,6";
-            //userControl1.Height = label.Bottom;
-            //userControl1.Controls.Add(label);
+            addQuestoes.atualizarAtributosQuestoes(objConection, this);
+            //FormBorderStyle = FormBorderStyle.None;           
             WindowState = FormWindowState.Maximized;           
             
         }
@@ -162,6 +158,47 @@ namespace Gestor_de_estudos
             {
                 MessageBox.Show("Nao conectado");
             }
+        }
+        private void cbBanca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void btnAddBanca_Click(object sender, EventArgs e)
+        {
+            addQuestoes.addBanca(objConection, this);          
+        }
+        private void tbNovaBanca_MouseClick(object sender, MouseEventArgs e)
+        {
+            tbNovaBanca.Text = "";
+        }
+        private void btnAddArea_Click(object sender, EventArgs e)
+        {
+            addQuestoes.addArea(objConection, this);
+        }
+        private void tbNovaArea_Click(object sender, EventArgs e)
+        {
+            tbNovaArea.Text = "";
+        }
+        private void btnAddMateria_Click(object sender, EventArgs e)
+        {
+            addQuestoes.addMateria(objConection, this);
+        }
+        private void btnAddAssunto_Click(object sender, EventArgs e)
+        {
+            addQuestoes.addAssunto(objConection, this);
+        }
+        private void tbNovaMateria_Click(object sender, EventArgs e)
+        {
+            tbNovaMateria.Text = "";
+        }
+        private void tbNovoAssunto_Click(object sender, EventArgs e)
+        {
+            tbNovoAssunto.Text = "";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            addQuestoes.atualizarAtributosQuestoes(objConection, this);
         }
     }
 }
