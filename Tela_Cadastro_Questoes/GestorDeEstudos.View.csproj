@@ -145,9 +145,6 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="dbQuestoes.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\icons8-adicionar-50.png" />
     <None Include="Resources\download.png" />
   </ItemGroup>

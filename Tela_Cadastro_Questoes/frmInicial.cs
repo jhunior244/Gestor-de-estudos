@@ -20,15 +20,14 @@ namespace Gestor_de_estudos
         VisualisadorPDF viewPdf = new VisualisadorPDF();
         EditorDeResumos Editor = new EditorDeResumos();
         ControleImpressao impressao = new ControleImpressao();
-        OleDbConnection objConection = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\dbQuestoes.accdb");
+        OleDbConnection objConection = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\junior\source\repos\Gestor-de-estudos\Tela_Cadastro_Questoes\dbQuestoes.accdb");
         AddQuestoes addQuestoes = new AddQuestoes();
         public frmInicial()
         {
             InitializeComponent();
             addQuestoes.atualizarAtributosQuestoes(objConection, this);
             //FormBorderStyle = FormBorderStyle.None;           
-            WindowState = FormWindowState.Maximized;           
-            
+            WindowState = FormWindowState.Maximized;        
         }
         private void panel1_Paint(object sender, PaintEventArgs e) { }
         private void documentoPDFToolStripMenuItem_Click(object sender, EventArgs e)
@@ -195,7 +194,6 @@ namespace Gestor_de_estudos
         {
             tbNovoAssunto.Text = "";
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             addQuestoes.atualizarAtributosQuestoes(objConection, this);

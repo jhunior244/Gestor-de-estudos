@@ -100,10 +100,9 @@ namespace Tela_Cadastro_Questoes
                 string query = "select * from tb_questoes";
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, objConection);
                 DataSet dataSet = new DataSet();
-                adapter.Fill(dataSet, "tb_questoes");
+                int x = adapter.Fill(dataSet, "tb_questoes");
                 DataTable tabela = dataSet.Tables["tb_questoes"];
-                obj.dataGridView1.DataSource =  dataSet.Tables["tb_questoes"];
-                int x = tabela.Rows.Count;
+                obj.dataGridView1.DataSource =  dataSet.Tables["tb_questoes"];           
                 objConection.Close();
             }
             catch (Exception erro)
