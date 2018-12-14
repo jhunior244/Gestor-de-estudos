@@ -102,7 +102,7 @@ namespace Tela_Cadastro_Questoes
                 DataSet dataSet = new DataSet();
                 int x = adapter.Fill(dataSet, "tb_questoes");
                 DataTable tabela = dataSet.Tables["tb_questoes"];
-                obj.dataGridView1.DataSource =  dataSet.Tables["tb_questoes"];           
+                //obj.dataGridView1.DataSource =  dataSet.Tables["tb_questoes"];           
                 objConection.Close();
             }
             catch (Exception erro)
@@ -111,6 +111,11 @@ namespace Tela_Cadastro_Questoes
                 MessageBox.Show(erro.Message);
                 objConection.Close();
             }
+        }
+
+        public void AddQuestão(OleDbConnection objConection, frmInicial obj)
+        {
+            Questoes questao = new Questoes();
         }
     }
 }

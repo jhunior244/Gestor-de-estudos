@@ -20,7 +20,7 @@ namespace Gestor_de_estudos
         VisualisadorPDF viewPdf = new VisualisadorPDF();
         EditorDeResumos Editor = new EditorDeResumos();
         ControleImpressao impressao = new ControleImpressao();
-        OleDbConnection objConection = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\junior\source\repos\Gestor-de-estudos\Tela_Cadastro_Questoes\dbQuestoes.accdb");
+        OleDbConnection objConection = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\dbQuestoes.accdb");
         AddQuestoes addQuestoes = new AddQuestoes();
         public frmInicial()
         {
