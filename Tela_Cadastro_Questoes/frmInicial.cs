@@ -198,5 +198,12 @@ namespace Gestor_de_estudos
         {
             addQuestoes.atualizarAtributosQuestoes(objConection, this);
         }
+
+        private void btnAddQuestao_Click(object sender, EventArgs e)
+        {
+            Questoes questao = new Questoes(cbArea.Text, cbMateria.Text, cbAssunto.Text, cbBanca.Text, richEnunciado.Text, richAltA.Text, richAltB.Text, richAltC.Text, richAltD.Text, richAltE.Text, rdbletraA.Checked, rdbletraB.Checked, rdbletraC.Checked, rdbletraD.Checked, rdbletraE.Checked);
+            AddQuestoes addQuestoes = new AddQuestoes();
+            addQuestoes.AddQuestão(objConection, questao);
+        }
     }
 }

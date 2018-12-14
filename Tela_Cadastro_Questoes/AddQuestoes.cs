@@ -113,9 +113,29 @@ namespace Tela_Cadastro_Questoes
             }
         }
 
-        public void AddQuestão(OleDbConnection objConection, frmInicial obj)
-        {
-            Questoes questao = new Questoes();
+        public void AddQuestão(OleDbConnection objConection, Questoes questão)
+         {
+            try
+            {
+                if (questão.AlternativaA != "" && questão.AlternativaB != "" && questão.AlternativaC != "" && questão.AlternativaD != "" && questão.AlternativaE != "")
+                {
+                    objConection.Open();
+                    string query = "insert into tb_questoes(area, materia, assunto, banca, enunciado, alternativaA, alternativaB, alternativaC, alternativaD, alternativaE, validadadeA, validadadeB, validadadeC, validadadeD, validadadeE)";
+                    query += "values ('" + questão.Area + "', '" + questão.Materia + "', '" + questão.Assunto + "', '" + questão.Banca + "', '" + questão.Enunciado + "' , '" + questão.AlternativaA + "' , '" + questão.AlternativaB + "' ,";
+                    query += "'" + questão.AlternativaC + "' , '" + questão.AlternativaD + "' , '" + questão.AlternativaE + "' , " + questão.ValidadeA + " , '" + questão.ValidadeB + "' , '" + questão.ValidadeC + "' , '" + questão.ValidadeD + "' , '" + questão.ValidadeE + "')";
+                    OleDbCommand cmd = new OleDbCommand(query, objConection);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Dado inserido");
+                    objConection.Close();
+
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+                objConection.Close();
+            }
+           
         }
     }
 }

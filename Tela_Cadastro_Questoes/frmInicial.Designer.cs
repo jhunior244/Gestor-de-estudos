@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicial));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnNavegador = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -51,6 +52,14 @@
             this.prntprvdlg1 = new System.Windows.Forms.PrintPreviewDialog();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tbNovaArea = new System.Windows.Forms.TextBox();
+            this.tbNovaMateria = new System.Windows.Forms.TextBox();
+            this.tbNovoAssunto = new System.Windows.Forms.TextBox();
+            this.tbNovaBanca = new System.Windows.Forms.TextBox();
+            this.btnAddArea = new System.Windows.Forms.Button();
+            this.btnAddMateria = new System.Windows.Forms.Button();
+            this.btnAddAssunto = new System.Windows.Forms.Button();
+            this.btnAddBanca = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.rdbletraE = new System.Windows.Forms.RadioButton();
             this.rdbletraD = new System.Windows.Forms.RadioButton();
@@ -58,12 +67,12 @@
             this.rdbletraB = new System.Windows.Forms.RadioButton();
             this.rdbletraA = new System.Windows.Forms.RadioButton();
             this.lblEnunciado = new System.Windows.Forms.Label();
-            this.richTextBox7 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox6 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.richAltD = new System.Windows.Forms.RichTextBox();
+            this.richAltE = new System.Windows.Forms.RichTextBox();
+            this.richAltC = new System.Windows.Forms.RichTextBox();
+            this.richAltB = new System.Windows.Forms.RichTextBox();
+            this.richAltA = new System.Windows.Forms.RichTextBox();
+            this.richEnunciado = new System.Windows.Forms.RichTextBox();
             this.btnAddQuestao = new System.Windows.Forms.Button();
             this.cbAssunto = new System.Windows.Forms.ComboBox();
             this.cbArea = new System.Windows.Forms.ComboBox();
@@ -82,18 +91,6 @@
             this.cbxArea = new System.Windows.Forms.ComboBox();
             this.cbxAssunto = new System.Windows.Forms.ComboBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.dsfdsfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dfdsfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.configuraçõesImpressãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.visualizarImpressãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.richEditTexto = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.miniToolStrip = new System.Windows.Forms.MenuStrip();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.toolStripNovo = new System.Windows.Forms.ToolStripButton();
             this.toolStripAbrit = new System.Windows.Forms.ToolStripButton();
             this.toolStripSalvar = new System.Windows.Forms.ToolStripButton();
@@ -109,16 +106,18 @@
             this.toolStripViewImpressao = new System.Windows.Forms.ToolStripButton();
             this.toolStripImprimir = new System.Windows.Forms.ToolStripButton();
             this.toolStripAjuda = new System.Windows.Forms.ToolStripButton();
-            this.btnAddBanca = new System.Windows.Forms.Button();
-            this.btnAddAssunto = new System.Windows.Forms.Button();
-            this.btnAddMateria = new System.Windows.Forms.Button();
-            this.btnAddArea = new System.Windows.Forms.Button();
-            this.tbNovaBanca = new System.Windows.Forms.TextBox();
-            this.tbNovoAssunto = new System.Windows.Forms.TextBox();
-            this.tbNovaMateria = new System.Windows.Forms.TextBox();
-            this.tbNovaArea = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.dsfdsfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dfdsfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuraçõesImpressãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizarImpressãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.richEditTexto = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.miniToolStrip = new System.Windows.Forms.MenuStrip();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.panel1.SuspendLayout();
             this.menuStripPrincipal.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -127,7 +126,6 @@
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -150,6 +148,16 @@
             this.panel1.Size = new System.Drawing.Size(138, 698);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(30, 261);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Carregar grid";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -321,7 +329,6 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.dataGridView1);
             this.tabPage3.Controls.Add(this.tbNovaArea);
             this.tabPage3.Controls.Add(this.tbNovaMateria);
             this.tabPage3.Controls.Add(this.tbNovoAssunto);
@@ -337,12 +344,12 @@
             this.tabPage3.Controls.Add(this.rdbletraB);
             this.tabPage3.Controls.Add(this.rdbletraA);
             this.tabPage3.Controls.Add(this.lblEnunciado);
-            this.tabPage3.Controls.Add(this.richTextBox7);
-            this.tabPage3.Controls.Add(this.richTextBox6);
-            this.tabPage3.Controls.Add(this.richTextBox5);
-            this.tabPage3.Controls.Add(this.richTextBox4);
-            this.tabPage3.Controls.Add(this.richTextBox3);
-            this.tabPage3.Controls.Add(this.richTextBox2);
+            this.tabPage3.Controls.Add(this.richAltD);
+            this.tabPage3.Controls.Add(this.richAltE);
+            this.tabPage3.Controls.Add(this.richAltC);
+            this.tabPage3.Controls.Add(this.richAltB);
+            this.tabPage3.Controls.Add(this.richAltA);
+            this.tabPage3.Controls.Add(this.richEnunciado);
             this.tabPage3.Controls.Add(this.btnAddQuestao);
             this.tabPage3.Controls.Add(this.cbAssunto);
             this.tabPage3.Controls.Add(this.cbArea);
@@ -355,6 +362,82 @@
             this.tabPage3.Text = "Adicionar Questão";
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // tbNovaArea
+            // 
+            this.tbNovaArea.Location = new System.Drawing.Point(59, 104);
+            this.tbNovaArea.Name = "tbNovaArea";
+            this.tbNovaArea.Size = new System.Drawing.Size(165, 20);
+            this.tbNovaArea.TabIndex = 26;
+            this.tbNovaArea.Text = "NOVA AREA";
+            this.tbNovaArea.Click += new System.EventHandler(this.tbNovaArea_Click);
+            // 
+            // tbNovaMateria
+            // 
+            this.tbNovaMateria.Location = new System.Drawing.Point(272, 43);
+            this.tbNovaMateria.Name = "tbNovaMateria";
+            this.tbNovaMateria.Size = new System.Drawing.Size(179, 20);
+            this.tbNovaMateria.TabIndex = 25;
+            this.tbNovaMateria.Text = "NOVA MATERIA";
+            this.tbNovaMateria.Click += new System.EventHandler(this.tbNovaMateria_Click);
+            // 
+            // tbNovoAssunto
+            // 
+            this.tbNovoAssunto.Location = new System.Drawing.Point(272, 104);
+            this.tbNovoAssunto.Name = "tbNovoAssunto";
+            this.tbNovoAssunto.Size = new System.Drawing.Size(179, 20);
+            this.tbNovoAssunto.TabIndex = 24;
+            this.tbNovoAssunto.Text = "NOVO ASSUNTO";
+            this.tbNovoAssunto.Click += new System.EventHandler(this.tbNovoAssunto_Click);
+            // 
+            // tbNovaBanca
+            // 
+            this.tbNovaBanca.Location = new System.Drawing.Point(59, 43);
+            this.tbNovaBanca.Name = "tbNovaBanca";
+            this.tbNovaBanca.Size = new System.Drawing.Size(165, 20);
+            this.tbNovaBanca.TabIndex = 23;
+            this.tbNovaBanca.Text = "NOVA BANCA";
+            this.tbNovaBanca.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tbNovaBanca_MouseClick);
+            // 
+            // btnAddArea
+            // 
+            this.btnAddArea.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
+            this.btnAddArea.Location = new System.Drawing.Point(17, 104);
+            this.btnAddArea.Name = "btnAddArea";
+            this.btnAddArea.Size = new System.Drawing.Size(36, 20);
+            this.btnAddArea.TabIndex = 22;
+            this.btnAddArea.UseVisualStyleBackColor = true;
+            this.btnAddArea.Click += new System.EventHandler(this.btnAddArea_Click);
+            // 
+            // btnAddMateria
+            // 
+            this.btnAddMateria.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
+            this.btnAddMateria.Location = new System.Drawing.Point(230, 43);
+            this.btnAddMateria.Name = "btnAddMateria";
+            this.btnAddMateria.Size = new System.Drawing.Size(36, 20);
+            this.btnAddMateria.TabIndex = 21;
+            this.btnAddMateria.UseVisualStyleBackColor = true;
+            this.btnAddMateria.Click += new System.EventHandler(this.btnAddMateria_Click);
+            // 
+            // btnAddAssunto
+            // 
+            this.btnAddAssunto.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
+            this.btnAddAssunto.Location = new System.Drawing.Point(230, 103);
+            this.btnAddAssunto.Name = "btnAddAssunto";
+            this.btnAddAssunto.Size = new System.Drawing.Size(36, 21);
+            this.btnAddAssunto.TabIndex = 20;
+            this.btnAddAssunto.UseVisualStyleBackColor = true;
+            this.btnAddAssunto.Click += new System.EventHandler(this.btnAddAssunto_Click);
+            // 
+            // btnAddBanca
+            // 
+            this.btnAddBanca.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
+            this.btnAddBanca.Location = new System.Drawing.Point(17, 43);
+            this.btnAddBanca.Name = "btnAddBanca";
+            this.btnAddBanca.Size = new System.Drawing.Size(36, 20);
+            this.btnAddBanca.TabIndex = 19;
+            this.btnAddBanca.UseVisualStyleBackColor = true;
+            this.btnAddBanca.Click += new System.EventHandler(this.btnAddBanca_Click);
             // 
             // label1
             // 
@@ -424,59 +507,59 @@
             this.lblEnunciado.Text = "ENUNCIADO";
             this.lblEnunciado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // richTextBox7
+            // richAltD
             // 
-            this.richTextBox7.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.richTextBox7.Location = new System.Drawing.Point(65, 490);
-            this.richTextBox7.Name = "richTextBox7";
-            this.richTextBox7.Size = new System.Drawing.Size(587, 52);
-            this.richTextBox7.TabIndex = 10;
-            this.richTextBox7.Text = "";
+            this.richAltD.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richAltD.Location = new System.Drawing.Point(65, 490);
+            this.richAltD.Name = "richAltD";
+            this.richAltD.Size = new System.Drawing.Size(587, 52);
+            this.richAltD.TabIndex = 10;
+            this.richAltD.Text = "";
             // 
-            // richTextBox6
+            // richAltE
             // 
-            this.richTextBox6.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.richTextBox6.Location = new System.Drawing.Point(65, 548);
-            this.richTextBox6.Name = "richTextBox6";
-            this.richTextBox6.Size = new System.Drawing.Size(587, 52);
-            this.richTextBox6.TabIndex = 9;
-            this.richTextBox6.Text = "";
+            this.richAltE.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richAltE.Location = new System.Drawing.Point(65, 548);
+            this.richAltE.Name = "richAltE";
+            this.richAltE.Size = new System.Drawing.Size(587, 52);
+            this.richAltE.TabIndex = 9;
+            this.richAltE.Text = "";
             // 
-            // richTextBox5
+            // richAltC
             // 
-            this.richTextBox5.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.richTextBox5.Location = new System.Drawing.Point(65, 432);
-            this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(587, 52);
-            this.richTextBox5.TabIndex = 8;
-            this.richTextBox5.Text = "";
+            this.richAltC.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richAltC.Location = new System.Drawing.Point(65, 432);
+            this.richAltC.Name = "richAltC";
+            this.richAltC.Size = new System.Drawing.Size(587, 52);
+            this.richAltC.TabIndex = 8;
+            this.richAltC.Text = "";
             // 
-            // richTextBox4
+            // richAltB
             // 
-            this.richTextBox4.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.richTextBox4.Location = new System.Drawing.Point(65, 374);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(587, 52);
-            this.richTextBox4.TabIndex = 7;
-            this.richTextBox4.Text = "";
+            this.richAltB.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richAltB.Location = new System.Drawing.Point(65, 374);
+            this.richAltB.Name = "richAltB";
+            this.richAltB.Size = new System.Drawing.Size(587, 52);
+            this.richAltB.TabIndex = 7;
+            this.richAltB.Text = "";
             // 
-            // richTextBox3
+            // richAltA
             // 
-            this.richTextBox3.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.richTextBox3.Location = new System.Drawing.Point(65, 316);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(587, 52);
-            this.richTextBox3.TabIndex = 6;
-            this.richTextBox3.Text = "";
+            this.richAltA.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richAltA.Location = new System.Drawing.Point(65, 316);
+            this.richAltA.Name = "richAltA";
+            this.richAltA.Size = new System.Drawing.Size(587, 52);
+            this.richAltA.TabIndex = 6;
+            this.richAltA.Text = "";
             // 
-            // richTextBox2
+            // richEnunciado
             // 
-            this.richTextBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.richTextBox2.Location = new System.Drawing.Point(39, 149);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(634, 139);
-            this.richTextBox2.TabIndex = 5;
-            this.richTextBox2.Text = "";
+            this.richEnunciado.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richEnunciado.Location = new System.Drawing.Point(39, 149);
+            this.richEnunciado.Name = "richEnunciado";
+            this.richEnunciado.Size = new System.Drawing.Size(634, 139);
+            this.richEnunciado.TabIndex = 5;
+            this.richEnunciado.Text = "";
             // 
             // btnAddQuestao
             // 
@@ -488,11 +571,14 @@
             this.btnAddQuestao.TabIndex = 4;
             this.btnAddQuestao.Text = "ADICIONAR QUESTÃO";
             this.btnAddQuestao.UseVisualStyleBackColor = true;
+            this.btnAddQuestao.Click += new System.EventHandler(this.btnAddQuestao_Click);
             // 
             // cbAssunto
             // 
             this.cbAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAssunto.FormattingEnabled = true;
+            this.cbAssunto.Items.AddRange(new object[] {
+            "Polimorfismo"});
             this.cbAssunto.Location = new System.Drawing.Point(230, 76);
             this.cbAssunto.Name = "cbAssunto";
             this.cbAssunto.Size = new System.Drawing.Size(221, 23);
@@ -503,6 +589,8 @@
             // 
             this.cbArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbArea.FormattingEnabled = true;
+            this.cbArea.Items.AddRange(new object[] {
+            "Tecnologia da Informação"});
             this.cbArea.Location = new System.Drawing.Point(17, 76);
             this.cbArea.Name = "cbArea";
             this.cbArea.Size = new System.Drawing.Size(207, 23);
@@ -513,6 +601,8 @@
             // 
             this.cbMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMateria.FormattingEnabled = true;
+            this.cbMateria.Items.AddRange(new object[] {
+            "POO"});
             this.cbMateria.Location = new System.Drawing.Point(230, 14);
             this.cbMateria.Name = "cbMateria";
             this.cbMateria.Size = new System.Drawing.Size(221, 23);
@@ -523,6 +613,8 @@
             // 
             this.cbBanca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBanca.FormattingEnabled = true;
+            this.cbBanca.Items.AddRange(new object[] {
+            "CESPE"});
             this.cbBanca.Location = new System.Drawing.Point(17, 14);
             this.cbBanca.Name = "cbBanca";
             this.cbBanca.Size = new System.Drawing.Size(207, 23);
@@ -698,116 +790,6 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dsfdsfToolStripMenuItem,
-            this.dfdsfToolStripMenuItem,
-            this.ajudaToolStripMenuItem1,
-            this.sobreToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(685, 24);
-            this.menuStrip1.TabIndex = 11;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // dsfdsfToolStripMenuItem
-            // 
-            this.dsfdsfToolStripMenuItem.Name = "dsfdsfToolStripMenuItem";
-            this.dsfdsfToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.dsfdsfToolStripMenuItem.Text = "Inicio";
-            // 
-            // dfdsfToolStripMenuItem
-            // 
-            this.dfdsfToolStripMenuItem.Name = "dfdsfToolStripMenuItem";
-            this.dfdsfToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.dfdsfToolStripMenuItem.Text = "Editar";
-            // 
-            // ajudaToolStripMenuItem1
-            // 
-            this.ajudaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.configuraçõesImpressãoToolStripMenuItem,
-            this.visualizarImpressãoToolStripMenuItem,
-            this.imprimirToolStripMenuItem});
-            this.ajudaToolStripMenuItem1.Name = "ajudaToolStripMenuItem1";
-            this.ajudaToolStripMenuItem1.Size = new System.Drawing.Size(73, 20);
-            this.ajudaToolStripMenuItem1.Text = "Impressão";
-            // 
-            // configuraçõesImpressãoToolStripMenuItem
-            // 
-            this.configuraçõesImpressãoToolStripMenuItem.Name = "configuraçõesImpressãoToolStripMenuItem";
-            this.configuraçõesImpressãoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.configuraçõesImpressãoToolStripMenuItem.Text = "Configurações Impressão";
-            this.configuraçõesImpressãoToolStripMenuItem.Click += new System.EventHandler(this.configuraçõesImpressãoToolStripMenuItem_Click);
-            // 
-            // visualizarImpressãoToolStripMenuItem
-            // 
-            this.visualizarImpressãoToolStripMenuItem.Name = "visualizarImpressãoToolStripMenuItem";
-            this.visualizarImpressãoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.visualizarImpressãoToolStripMenuItem.Text = "Visualizar Impressão";
-            this.visualizarImpressãoToolStripMenuItem.Click += new System.EventHandler(this.visualizarImpressãoToolStripMenuItem_Click);
-            // 
-            // imprimirToolStripMenuItem
-            // 
-            this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
-            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.imprimirToolStripMenuItem.Text = "Imprimir";
-            this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
-            // 
-            // sobreToolStripMenuItem
-            // 
-            this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.sobreToolStripMenuItem.Text = "Ajuda";
-            // 
-            // richEditTexto
-            // 
-            this.richEditTexto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.richEditTexto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richEditTexto.Location = new System.Drawing.Point(76, 119);
-            this.richEditTexto.Name = "richEditTexto";
-            this.richEditTexto.Size = new System.Drawing.Size(539, 531);
-            this.richEditTexto.TabIndex = 0;
-            this.richEditTexto.Text = "";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(38, 88);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(613, 578);
-            this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = "";
-            // 
-            // miniToolStrip
-            // 
-            this.miniToolStrip.AccessibleName = "Nova seleção de item";
-            this.miniToolStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.ComboBox;
-            this.miniToolStrip.AutoSize = false;
-            this.miniToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.miniToolStrip.Location = new System.Drawing.Point(226, 2);
-            this.miniToolStrip.Name = "miniToolStrip";
-            this.miniToolStrip.Size = new System.Drawing.Size(789, 24);
-            this.miniToolStrip.TabIndex = 11;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Location = new System.Drawing.Point(145, 31);
-            this.tabControl1.MaximumSize = new System.Drawing.Size(954, 1900);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(699, 698);
-            this.tabControl1.TabIndex = 2;
-            // 
             // toolStripNovo
             // 
             this.toolStripNovo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -955,99 +937,115 @@
             this.toolStripAjuda.Size = new System.Drawing.Size(23, 20);
             this.toolStripAjuda.Text = "Ajuda";
             // 
-            // btnAddBanca
+            // menuStrip1
             // 
-            this.btnAddBanca.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
-            this.btnAddBanca.Location = new System.Drawing.Point(17, 43);
-            this.btnAddBanca.Name = "btnAddBanca";
-            this.btnAddBanca.Size = new System.Drawing.Size(36, 20);
-            this.btnAddBanca.TabIndex = 19;
-            this.btnAddBanca.UseVisualStyleBackColor = true;
-            this.btnAddBanca.Click += new System.EventHandler(this.btnAddBanca_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dsfdsfToolStripMenuItem,
+            this.dfdsfToolStripMenuItem,
+            this.ajudaToolStripMenuItem1,
+            this.sobreToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(685, 24);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // btnAddAssunto
+            // dsfdsfToolStripMenuItem
             // 
-            this.btnAddAssunto.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
-            this.btnAddAssunto.Location = new System.Drawing.Point(230, 103);
-            this.btnAddAssunto.Name = "btnAddAssunto";
-            this.btnAddAssunto.Size = new System.Drawing.Size(36, 21);
-            this.btnAddAssunto.TabIndex = 20;
-            this.btnAddAssunto.UseVisualStyleBackColor = true;
-            this.btnAddAssunto.Click += new System.EventHandler(this.btnAddAssunto_Click);
+            this.dsfdsfToolStripMenuItem.Name = "dsfdsfToolStripMenuItem";
+            this.dsfdsfToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.dsfdsfToolStripMenuItem.Text = "Inicio";
             // 
-            // btnAddMateria
+            // dfdsfToolStripMenuItem
             // 
-            this.btnAddMateria.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
-            this.btnAddMateria.Location = new System.Drawing.Point(230, 43);
-            this.btnAddMateria.Name = "btnAddMateria";
-            this.btnAddMateria.Size = new System.Drawing.Size(36, 20);
-            this.btnAddMateria.TabIndex = 21;
-            this.btnAddMateria.UseVisualStyleBackColor = true;
-            this.btnAddMateria.Click += new System.EventHandler(this.btnAddMateria_Click);
+            this.dfdsfToolStripMenuItem.Name = "dfdsfToolStripMenuItem";
+            this.dfdsfToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.dfdsfToolStripMenuItem.Text = "Editar";
             // 
-            // btnAddArea
+            // ajudaToolStripMenuItem1
             // 
-            this.btnAddArea.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
-            this.btnAddArea.Location = new System.Drawing.Point(17, 104);
-            this.btnAddArea.Name = "btnAddArea";
-            this.btnAddArea.Size = new System.Drawing.Size(36, 20);
-            this.btnAddArea.TabIndex = 22;
-            this.btnAddArea.UseVisualStyleBackColor = true;
-            this.btnAddArea.Click += new System.EventHandler(this.btnAddArea_Click);
+            this.ajudaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.configuraçõesImpressãoToolStripMenuItem,
+            this.visualizarImpressãoToolStripMenuItem,
+            this.imprimirToolStripMenuItem});
+            this.ajudaToolStripMenuItem1.Name = "ajudaToolStripMenuItem1";
+            this.ajudaToolStripMenuItem1.Size = new System.Drawing.Size(73, 20);
+            this.ajudaToolStripMenuItem1.Text = "Impressão";
             // 
-            // tbNovaBanca
+            // configuraçõesImpressãoToolStripMenuItem
             // 
-            this.tbNovaBanca.Location = new System.Drawing.Point(59, 43);
-            this.tbNovaBanca.Name = "tbNovaBanca";
-            this.tbNovaBanca.Size = new System.Drawing.Size(165, 20);
-            this.tbNovaBanca.TabIndex = 23;
-            this.tbNovaBanca.Text = "NOVA BANCA";
-            this.tbNovaBanca.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tbNovaBanca_MouseClick);
+            this.configuraçõesImpressãoToolStripMenuItem.Name = "configuraçõesImpressãoToolStripMenuItem";
+            this.configuraçõesImpressãoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.configuraçõesImpressãoToolStripMenuItem.Text = "Configurações Impressão";
+            this.configuraçõesImpressãoToolStripMenuItem.Click += new System.EventHandler(this.configuraçõesImpressãoToolStripMenuItem_Click);
             // 
-            // tbNovoAssunto
+            // visualizarImpressãoToolStripMenuItem
             // 
-            this.tbNovoAssunto.Location = new System.Drawing.Point(272, 104);
-            this.tbNovoAssunto.Name = "tbNovoAssunto";
-            this.tbNovoAssunto.Size = new System.Drawing.Size(179, 20);
-            this.tbNovoAssunto.TabIndex = 24;
-            this.tbNovoAssunto.Text = "NOVO ASSUNTO";
-            this.tbNovoAssunto.Click += new System.EventHandler(this.tbNovoAssunto_Click);
+            this.visualizarImpressãoToolStripMenuItem.Name = "visualizarImpressãoToolStripMenuItem";
+            this.visualizarImpressãoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.visualizarImpressãoToolStripMenuItem.Text = "Visualizar Impressão";
+            this.visualizarImpressãoToolStripMenuItem.Click += new System.EventHandler(this.visualizarImpressãoToolStripMenuItem_Click);
             // 
-            // tbNovaMateria
+            // imprimirToolStripMenuItem
             // 
-            this.tbNovaMateria.Location = new System.Drawing.Point(272, 43);
-            this.tbNovaMateria.Name = "tbNovaMateria";
-            this.tbNovaMateria.Size = new System.Drawing.Size(179, 20);
-            this.tbNovaMateria.TabIndex = 25;
-            this.tbNovaMateria.Text = "NOVA MATERIA";
-            this.tbNovaMateria.Click += new System.EventHandler(this.tbNovaMateria_Click);
+            this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
+            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.imprimirToolStripMenuItem.Text = "Imprimir";
+            this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
             // 
-            // tbNovaArea
+            // sobreToolStripMenuItem
             // 
-            this.tbNovaArea.Location = new System.Drawing.Point(59, 104);
-            this.tbNovaArea.Name = "tbNovaArea";
-            this.tbNovaArea.Size = new System.Drawing.Size(165, 20);
-            this.tbNovaArea.TabIndex = 26;
-            this.tbNovaArea.Text = "NOVA AREA";
-            this.tbNovaArea.Click += new System.EventHandler(this.tbNovaArea_Click);
+            this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.sobreToolStripMenuItem.Text = "Ajuda";
             // 
-            // dataGridView1
+            // richEditTexto
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(287, 187);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(323, 150);
-            this.dataGridView1.TabIndex = 27;
+            this.richEditTexto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.richEditTexto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richEditTexto.Location = new System.Drawing.Point(76, 119);
+            this.richEditTexto.Name = "richEditTexto";
+            this.richEditTexto.Size = new System.Drawing.Size(539, 531);
+            this.richEditTexto.TabIndex = 0;
+            this.richEditTexto.Text = "";
             // 
-            // button4
+            // richTextBox1
             // 
-            this.button4.Location = new System.Drawing.Point(30, 261);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Carregar grid";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.richTextBox1.Enabled = false;
+            this.richTextBox1.Location = new System.Drawing.Point(38, 88);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(613, 578);
+            this.richTextBox1.TabIndex = 10;
+            this.richTextBox1.Text = "";
+            // 
+            // miniToolStrip
+            // 
+            this.miniToolStrip.AccessibleName = "Nova seleção de item";
+            this.miniToolStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.ComboBox;
+            this.miniToolStrip.AutoSize = false;
+            this.miniToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.miniToolStrip.Location = new System.Drawing.Point(226, 2);
+            this.miniToolStrip.Name = "miniToolStrip";
+            this.miniToolStrip.Size = new System.Drawing.Size(789, 24);
+            this.miniToolStrip.TabIndex = 11;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Location = new System.Drawing.Point(145, 31);
+            this.tabControl1.MaximumSize = new System.Drawing.Size(954, 1900);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(699, 698);
+            this.tabControl1.TabIndex = 2;
             // 
             // frmInicial
             // 
@@ -1075,7 +1073,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1143,12 +1140,12 @@
         private System.Windows.Forms.Button btnAssunto;
         private System.Windows.Forms.Button btnBanca;
         private System.Windows.Forms.Button btnArea;
-        private System.Windows.Forms.RichTextBox richTextBox7;
-        private System.Windows.Forms.RichTextBox richTextBox6;
-        private System.Windows.Forms.RichTextBox richTextBox5;
-        private System.Windows.Forms.RichTextBox richTextBox4;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox richAltD;
+        private System.Windows.Forms.RichTextBox richAltE;
+        private System.Windows.Forms.RichTextBox richAltC;
+        private System.Windows.Forms.RichTextBox richAltB;
+        private System.Windows.Forms.RichTextBox richAltA;
+        private System.Windows.Forms.RichTextBox richEnunciado;
         private System.Windows.Forms.Button btnAddQuestao;
         private System.Windows.Forms.ComboBox cbAssunto;
         private System.Windows.Forms.ComboBox cbArea;
@@ -1171,7 +1168,6 @@
         public System.Windows.Forms.TextBox tbNovaArea;
         public System.Windows.Forms.TextBox tbNovaMateria;
         public System.Windows.Forms.TextBox tbNovoAssunto;
-        public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button4;
     }
 }
