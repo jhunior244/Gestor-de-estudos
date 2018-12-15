@@ -95,15 +95,35 @@ namespace Tela_Cadastro_Questoes
         public void atualizarAtributosQuestoes(OleDbConnection objConection, frmInicial obj)
         {
             try
-            {
+            {               
                 objConection.Open();
-                string query = "select * from tb_questoes";
+                string query = "select validadeA from tb_questoes";
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, objConection);
                 DataSet dataSet = new DataSet();
-                int x = adapter.Fill(dataSet, "tb_questoes");
+                adapter.Fill(dataSet, "tb_questoes");
                 DataTable tabela = dataSet.Tables["tb_questoes"];
-                //obj.dataGridView1.DataSource =  dataSet.Tables["tb_questoes"];           
+                //obj.dataGridView1.DataSource =  dataSet.Tables["tb_questoes"];
+
+                OleDbCommand cmm = new OleDbCommand();
+                cmm.CommandText = "select validadeA from tb_questoes";
+                cmm.CommandType = CommandType.Text;
+                cmm.Connection = objConection;
+                OleDbDataReader DR;
+                DR = cmm.ExecuteReader();
+                int c = DR.Depth ;
+                DR.Read();
+                bool z = DR.GetBoolean(0);
+                DR.Read();
+                z = DR.GetBoolean(0);
+                if (!DR.Read())
+                {
+                    z = DR.GetBoolean(0);
+                }
+                    
+                
+
                 objConection.Close();
+                
             }
             catch (Exception erro)
             {
@@ -120,9 +140,9 @@ namespace Tela_Cadastro_Questoes
                 if (questão.AlternativaA != "" && questão.AlternativaB != "" && questão.AlternativaC != "" && questão.AlternativaD != "" && questão.AlternativaE != "")
                 {
                     objConection.Open();
-                    string query = "insert into tb_questoes(area, materia, assunto, banca, enunciado, alternativaA, alternativaB, alternativaC, alternativaD, alternativaE, validadadeA, validadadeB, validadadeC, validadadeD, validadadeE)";
+                    string query = "insert into tb_questoes(area, materia, assunto, banca, enunciado, alternativaA, alternativaB, alternativaC, alternativaD, alternativaE, validadeA)";
                     query += "values ('" + questão.Area + "', '" + questão.Materia + "', '" + questão.Assunto + "', '" + questão.Banca + "', '" + questão.Enunciado + "' , '" + questão.AlternativaA + "' , '" + questão.AlternativaB + "' ,";
-                    query += "'" + questão.AlternativaC + "' , '" + questão.AlternativaD + "' , '" + questão.AlternativaE + "' , " + questão.ValidadeA + " , '" + questão.ValidadeB + "' , '" + questão.ValidadeC + "' , '" + questão.ValidadeD + "' , '" + questão.ValidadeE + "')";
+                    query += "'" + questão.AlternativaC + "' , '" + questão.AlternativaD + "' , '" + questão.AlternativaE + "' , '1')";
                     OleDbCommand cmd = new OleDbCommand(query, objConection);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Dado inserido");
