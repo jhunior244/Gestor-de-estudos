@@ -113,14 +113,14 @@ namespace Tela_Cadastro_Questoes
                 int c = DR.Depth ;
                 DR.Read();
                 bool z = DR.GetBoolean(0);
-                DR.Read();
-                z = DR.GetBoolean(0);
-                if (!DR.Read())
-                {
-                    z = DR.GetBoolean(0);
-                }
-                    
-                
+                //DR.Read();
+                //z = DR.GetBoolean(0);
+                //if (DR.Read())
+                //{
+                //    z = DR.GetBoolean(0);
+                //}
+
+                byte x = Convert.ToByte(z);
 
                 objConection.Close();
                 
