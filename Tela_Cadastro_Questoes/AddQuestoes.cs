@@ -59,6 +59,22 @@ namespace Tela_Cadastro_Questoes
         {
             try
             {
+                if(questão.Banca == "")
+                {
+                    questão.Banca = "Não tem";
+                }
+                if (questão.Materia == "")
+                {
+                    questão.Materia = "Não tem";
+                }
+                if (questão.Assunto == "")
+                {
+                    questão.Assunto = "Não tem";
+                }
+                if (questão.Area == "")
+                {
+                    questão.Area = "Não tem";
+                }               
                 if (questão.AlternativaA != "" && questão.AlternativaB != "" && questão.AlternativaC != "" && questão.AlternativaD != "" && questão.AlternativaE != "")
                 {
                     objConection.Open();
@@ -69,7 +85,6 @@ namespace Tela_Cadastro_Questoes
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Dado inserido");
                     objConection.Close();
-
                 }
             }
             catch (Exception erro)

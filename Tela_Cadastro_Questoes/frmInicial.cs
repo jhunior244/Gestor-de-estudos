@@ -16,7 +16,7 @@ namespace Gestor_de_estudos
 {
     public partial class frmInicial : Form
     {
-
+        GeradorDeSimulados gerador = new GeradorDeSimulados();
         VisualisadorPDF viewPdf = new VisualisadorPDF();
         EditorDeResumos Editor = new EditorDeResumos();
         ControleImpressao impressao = new ControleImpressao();
@@ -214,6 +214,31 @@ namespace Gestor_de_estudos
         {
             ComboBox combo = this.cbArea;
             addQuestoes.AtualizaAtributosQuestoes(combo, "area.gte");
+        }
+        private void cbBancaNewSimulado_Click(object sender, EventArgs e)
+        {
+            ComboBox combo = this.cbBancaNewSimulado;
+            addQuestoes.AtualizaAtributosQuestoes(combo, "banca.gte");
+        }
+        private void cbAreaNewSimulado_Click(object sender, EventArgs e)
+        {
+            ComboBox combo = this.cbAreaNewSimulado;
+            addQuestoes.AtualizaAtributosQuestoes(combo, "area.gte");
+        }
+        private void cbMateriaNewSimulado_Click(object sender, EventArgs e)
+        {
+            ComboBox combo = this.cbMateriaNewSimulado;
+            addQuestoes.AtualizaAtributosQuestoes(combo, "materia.gte");
+        }
+        private void cbAssuntoNewSimulado_Click(object sender, EventArgs e)
+        {
+            ComboBox combo = this.cbAssuntoNewSimulado;
+            addQuestoes.AtualizaAtributosQuestoes(combo, "assunto.gte");
+        }
+        private void btnGerarSimulado_Click(object sender, EventArgs e)
+        {
+            DataSet data = gerador.BuscarQuestoes(objConection, Convert.ToInt32(tbQtdQuestoes.Text), cbBancaNewSimulado.Text, cbAreaNewSimulado.Text, cbAssuntoNewSimulado.Text, cbMateriaNewSimulado.Text);
+            
         }
     }
 }

@@ -10,16 +10,13 @@ namespace Tela_Cadastro_Questoes
     {
         private int idQuest;
         private string area;
-        public string Area { get { return (this.area); } }
-
         private string materia;
-        public string Materia { get { return (this.materia); } }
-
         private string assunto;
-        public string Assunto { get { return (this.assunto); } }
-
         private string banca;
-        public string Banca { get { return (this.banca); } }
+        public string Area { get => area; set => area = value; }
+        public string Materia { get => materia; set => materia = value; }
+        public string Assunto { get => assunto; set => assunto = value; }
+        public string Banca { get => banca; set => banca = value; }
 
         private string enunciado;
         public string Enunciado { get { return (this.enunciado); } }
@@ -54,12 +51,14 @@ namespace Tela_Cadastro_Questoes
         private bool validadeE;
         public bool ValidadeE { get { return (this.validadeE); } }
 
+        
+
         public Questoes(string ar, string mat, string assun, string banc, string enun, string A, string B, string C, string D, string E, bool valA, bool valB, bool valC, bool valD, bool valE)
         {
-            this.area = ar;
-            this.materia = mat;
-            this.assunto = assun;
-            this.banca = banc;
+            this.Area = ar;
+            this.Materia = mat;
+            this.Assunto = assun;
+            this.Banca = banc;
             this.enunciado = enun;
 
             this.alternativaA = A;
