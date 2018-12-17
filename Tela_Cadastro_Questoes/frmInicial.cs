@@ -159,15 +159,11 @@ namespace Gestor_de_estudos
         }
         private void btnAddBanca_Click(object sender, EventArgs e)
         {
-            addQuestoes.addBanca(tbNovaBanca.Text, this);
-        }
-        private void tbNovaBanca_MouseClick(object sender, MouseEventArgs e)
-        {
-            tbNovaBanca.Text = "";
+            addQuestoes.addItem("banca.gte",tbNovaBanca.Text, this);
         }
         private void btnAddArea_Click(object sender, EventArgs e)
         {
-            addQuestoes.addArea(tbNovaArea.Text, this);
+            addQuestoes.addItem("area.gte",tbNovaArea.Text, this);
         }
         private void tbNovaArea_Click(object sender, EventArgs e)
         {
@@ -175,11 +171,11 @@ namespace Gestor_de_estudos
         }
         private void btnAddMateria_Click(object sender, EventArgs e)
         {
-            addQuestoes.addMateria(tbNovaMateria.Text, this);
+            addQuestoes.addItem("materia.gte",tbNovaMateria.Text, this);
         }
         private void btnAddAssunto_Click(object sender, EventArgs e)
         {
-            addQuestoes.addAssunto(tbNovoAssunto.Text, this);
+            addQuestoes.addItem("assunto.gte",tbNovoAssunto.Text, this);
         }
         private void tbNovaMateria_Click(object sender, EventArgs e)
         {
@@ -194,6 +190,10 @@ namespace Gestor_de_estudos
             Questoes questao = new Questoes(cbArea.Text, cbMateria.Text, cbAssunto.Text, cbBanca.Text, richEnunciado.Text, richAltA.Text, richAltB.Text, richAltC.Text, richAltD.Text, richAltE.Text, rdbletraA.Checked, rdbletraB.Checked, rdbletraC.Checked, rdbletraD.Checked, rdbletraE.Checked);
             AddQuestoes addQuestoes = new AddQuestoes();
             addQuestoes.AddQuestão(objConection, questao);
+        }
+        private void tbNovaBanca_MouseClick(object sender, MouseEventArgs e)
+        {
+            tbNovaBanca.Text = "";
         }
         private void cbAssunto_Click(object sender, EventArgs e)
         {

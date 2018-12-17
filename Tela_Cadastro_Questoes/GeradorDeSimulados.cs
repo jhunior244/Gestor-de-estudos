@@ -10,30 +10,9 @@ namespace Tela_Cadastro_Questoes
     {
         List<Questoes> listaSimulado;
 
-        public List<Questoes> SimuladoPorbanca(string banca)
+        public void GerarSimulado(int num, string banca, string area, string assunto, string materia)
         {
-            return listaSimulado;
-        }
-        public List<Questoes> SimuladoPorMateria(string materia)
-        {
-            return listaSimulado;
-        }
-        public List<Questoes> SimuladoPorArea(string area)
-        {
-            return listaSimulado;
-        }
-        public List<Questoes> SimuladoPorAreaeBanca(string area, string banca)
-        {
-            return listaSimulado;
-        }
-        public List<Questoes> SimuladoPorAreaBancaMateria(string materia, string area, string banca)
-        {
-            return listaSimulado;
-        }
-        public List<Questoes> SimuladoEspecifico(string materia, string area, string banca, string assunto)
-        {
-            return listaSimulado;
-        }
 
+        } 
     }
 }

@@ -13,66 +13,34 @@ namespace Tela_Cadastro_Questoes
 {
     class AddQuestoes
     {
-        
-        public void addBanca(string banca, frmInicial obj)
+        public void addItem(string arquivo, string item, frmInicial obj)
         {
             try
             {
-                StreamWriter writer = new StreamWriter("banca.gte", true, Encoding.UTF8);
-                writer.WriteLine(banca);
+                StreamWriter writer = new StreamWriter(arquivo, true, Encoding.UTF8);
+                writer.WriteLine(item);
                 writer.Close();
-                obj.tbNovaBanca.Text = "NOVA BANCA";
-                MessageBox.Show("Nova banca gravada com sucesso");
+                if (arquivo == "materia.gte")
+                {
+                    obj.tbNovaMateria.Text = "NOVA MATERIA";
+                }
+                else if (arquivo == "banca.gte")
+                {
+                    obj.tbNovaBanca.Text = "NOVA BANCA";
+                }
+                else if (arquivo == "area.gte")
+                {
+                    obj.tbNovaArea.Text = "NOVA AREA";
+                }
+                else if (arquivo == "assunto.gte")
+                {
+                    obj.tbNovoAssunto.Text = "NOVO ASSUNTO";
+                }
+                MessageBox.Show("Item gravado com sucesso!");
             }
             catch (Exception erro)
             {
                 MessageBox.Show(erro.Message);
-            }
-        }
-        public void addArea(string area, frmInicial obj)
-        {
-            try
-            {
-                StreamWriter writer = new StreamWriter("area.gte", true, Encoding.UTF8);
-                writer.WriteLine(area);
-                writer.Close();
-                obj.tbNovaArea.Text = "NOVA AREA";
-                MessageBox.Show("Nova area gravada com sucesso");
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show(erro.Message);
-            }
-        }
-        public void addMateria(string materia, frmInicial obj)
-        {
-            try
-            {
-                StreamWriter writer = new StreamWriter("materia.gte", true, Encoding.UTF8);
-                
-                writer.WriteLine(materia);
-                writer.Close();
-                obj.tbNovaMateria.Text = "NOVA MATERIA";
-                MessageBox.Show("Nova materia gravada com sucesso");
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show(erro.Message);
-            }
-        }
-        public void addAssunto(string assunto, frmInicial obj)
-        {
-            try
-            {
-                StreamWriter writer = new StreamWriter("assunto.gte", true, Encoding.UTF8);
-                writer.WriteLine(assunto);
-                writer.Close();
-                obj.tbNovoAssunto.Text = "NOVO ASSUNTO";
-                MessageBox.Show("Novo assunto gravado com sucesso");
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show(erro.Message);               
             }
         }
         public void AtualizaAtributosQuestoes(ComboBox combo, string path)
@@ -88,7 +56,7 @@ namespace Tela_Cadastro_Questoes
             stream.Close();
         }
         public void AddQuestão(OleDbConnection objConection, Questoes questão)
-         {
+        {
             try
             {
                 if (questão.AlternativaA != "" && questão.AlternativaB != "" && questão.AlternativaC != "" && questão.AlternativaD != "" && questão.AlternativaE != "")
@@ -109,7 +77,7 @@ namespace Tela_Cadastro_Questoes
                 MessageBox.Show(erro.Message);
                 objConection.Close();
             }
-           
+
         }
     }
 }
