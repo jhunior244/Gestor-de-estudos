@@ -7,132 +7,86 @@ using System.Data.OleDb;
 using Gestor_de_estudos;
 using System.Windows.Forms;
 using System.Data;
+using System.IO;
 
 namespace Tela_Cadastro_Questoes
 {
     class AddQuestoes
     {
-        public void addBanca(OleDbConnection objConection, frmInicial obj)
+        
+        public void addBanca(string banca, frmInicial obj)
         {
             try
             {
-                objConection.Open();
-                string sql;
-                sql = "insert into tb_questoes(banca) values ('" + obj.tbNovaBanca.Text + "')";
-                OleDbCommand cmd = new OleDbCommand(sql, objConection);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Dado inserido");
-                objConection.Close();
+                StreamWriter writer = new StreamWriter("banca.gte", true, Encoding.UTF8);
+                writer.WriteLine(banca);
+                writer.Close();
                 obj.tbNovaBanca.Text = "NOVA BANCA";
-                atualizarAtributosQuestoes(objConection, obj);
+                MessageBox.Show("Nova banca gravada com sucesso");
             }
             catch (Exception erro)
             {
                 MessageBox.Show(erro.Message);
-                objConection.Close();
             }
         }
-        public void addArea(OleDbConnection objConection, frmInicial obj)
+        public void addArea(string area, frmInicial obj)
         {
             try
             {
-                objConection.Open();
-                string sql;
-                sql = "insert into tb_questoes(area) values ('" + obj.tbNovaArea.Text + "')";
-                OleDbCommand cmd = new OleDbCommand(sql, objConection);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Dado inserido");
-                objConection.Close();
+                StreamWriter writer = new StreamWriter("area.gte", true, Encoding.UTF8);
+                writer.WriteLine(area);
+                writer.Close();
                 obj.tbNovaArea.Text = "NOVA AREA";
-                atualizarAtributosQuestoes(objConection, obj);
+                MessageBox.Show("Nova area gravada com sucesso");
             }
             catch (Exception erro)
             {
                 MessageBox.Show(erro.Message);
-                objConection.Close();
             }
         }
-        public void addMateria(OleDbConnection objConection, frmInicial obj)
+        public void addMateria(string materia, frmInicial obj)
         {
             try
             {
-                objConection.Open();
-                string sql;
-                sql = "insert into tb_questoes(materia) values ('" + obj.tbNovaMateria.Text + "')";
-                OleDbCommand cmd = new OleDbCommand(sql, objConection);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Dado inserido");
-                objConection.Close();
-                obj.tbNovaMateria.Text = "NOVA MATERIA";
-                atualizarAtributosQuestoes(objConection, obj);
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show(erro.Message);
-                objConection.Close();
-            }
-        }
-        public void addAssunto(OleDbConnection objConection, frmInicial obj)
-        {
-            try
-            {
-                objConection.Open();
-                string sql;
-                sql = "insert into tb_questoes(assunto) values ('" + obj.tbNovoAssunto.Text + "')";
-                OleDbCommand cmd = new OleDbCommand(sql, objConection);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Dado inserido");
-                objConection.Close();
-                obj.tbNovoAssunto.Text = "NOVO ASSUNTO";
-                atualizarAtributosQuestoes(objConection, obj);
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show(erro.Message);
-                objConection.Close();
-            }
-        }
-        public void atualizarAtributosQuestoes(OleDbConnection objConection, frmInicial obj)
-        {
-            try
-            {               
-                objConection.Open();
-                string query = "select validadeA from tb_questoes";
-                OleDbDataAdapter adapter = new OleDbDataAdapter(query, objConection);
-                DataSet dataSet = new DataSet();
-                adapter.Fill(dataSet, "tb_questoes");
-                DataTable tabela = dataSet.Tables["tb_questoes"];
-                //obj.dataGridView1.DataSource =  dataSet.Tables["tb_questoes"];
-
-                OleDbCommand cmm = new OleDbCommand();
-                cmm.CommandText = "select validadeA from tb_questoes";
-                cmm.CommandType = CommandType.Text;
-                cmm.Connection = objConection;
-                OleDbDataReader DR;
-                DR = cmm.ExecuteReader();
-                int c = DR.Depth ;
-                DR.Read();
-                bool z = DR.GetBoolean(0);
-                //DR.Read();
-                //z = DR.GetBoolean(0);
-                //if (DR.Read())
-                //{
-                //    z = DR.GetBoolean(0);
-                //}
-
-                byte x = Convert.ToByte(z);
-
-                objConection.Close();
+                StreamWriter writer = new StreamWriter("materia.gte", true, Encoding.UTF8);
                 
+                writer.WriteLine(materia);
+                writer.Close();
+                obj.tbNovaMateria.Text = "NOVA MATERIA";
+                MessageBox.Show("Nova materia gravada com sucesso");
             }
             catch (Exception erro)
             {
-
                 MessageBox.Show(erro.Message);
-                objConection.Close();
             }
         }
-
+        public void addAssunto(string assunto, frmInicial obj)
+        {
+            try
+            {
+                StreamWriter writer = new StreamWriter("assunto.gte", true, Encoding.UTF8);
+                writer.WriteLine(assunto);
+                writer.Close();
+                obj.tbNovoAssunto.Text = "NOVO ASSUNTO";
+                MessageBox.Show("Novo assunto gravado com sucesso");
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);               
+            }
+        }
+        public void AtualizaAtributosQuestoes(ComboBox combo, string path)
+        {
+            StreamReader stream = new StreamReader(path, Encoding.Default);
+            string linha = stream.ReadLine();
+            combo.Items.Clear();
+            while (linha != null && linha != "")
+            {
+                combo.Items.Add(linha);
+                linha = stream.ReadLine();
+            }
+            stream.Close();
+        }
         public void AddQuestão(OleDbConnection objConection, Questoes questão)
          {
             try
@@ -140,9 +94,9 @@ namespace Tela_Cadastro_Questoes
                 if (questão.AlternativaA != "" && questão.AlternativaB != "" && questão.AlternativaC != "" && questão.AlternativaD != "" && questão.AlternativaE != "")
                 {
                     objConection.Open();
-                    string query = "insert into tb_questoes(area, materia, assunto, banca, enunciado, alternativaA, alternativaB, alternativaC, alternativaD, alternativaE, validadeA)";
+                    string query = "insert into tb_questoes(area, materia, assunto, banca, enunciado, alternativaA, alternativaB, alternativaC, alternativaD, alternativaE, validadeA, validadeB, validadeC, validadeD, validadeE)";
                     query += "values ('" + questão.Area + "', '" + questão.Materia + "', '" + questão.Assunto + "', '" + questão.Banca + "', '" + questão.Enunciado + "' , '" + questão.AlternativaA + "' , '" + questão.AlternativaB + "' ,";
-                    query += "'" + questão.AlternativaC + "' , '" + questão.AlternativaD + "' , '" + questão.AlternativaE + "' , '1')";
+                    query += "'" + questão.AlternativaC + "' , '" + questão.AlternativaD + "' , '" + questão.AlternativaE + "' , '" + Convert.ToByte(questão.ValidadeA) + "' ,'" + Convert.ToByte(questão.ValidadeB) + "' ,'" + Convert.ToByte(questão.ValidadeC) + "' ,'" + Convert.ToByte(questão.ValidadeD) + "' ,'" + Convert.ToByte(questão.ValidadeE) + "')";
                     OleDbCommand cmd = new OleDbCommand(query, objConection);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Dado inserido");

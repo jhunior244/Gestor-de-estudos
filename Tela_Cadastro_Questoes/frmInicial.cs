@@ -16,7 +16,7 @@ namespace Gestor_de_estudos
 {
     public partial class frmInicial : Form
     {
-        
+
         VisualisadorPDF viewPdf = new VisualisadorPDF();
         EditorDeResumos Editor = new EditorDeResumos();
         ControleImpressao impressao = new ControleImpressao();
@@ -25,9 +25,8 @@ namespace Gestor_de_estudos
         public frmInicial()
         {
             InitializeComponent();
-            addQuestoes.atualizarAtributosQuestoes(objConection, this);
             //FormBorderStyle = FormBorderStyle.None;           
-            WindowState = FormWindowState.Maximized;        
+            WindowState = FormWindowState.Maximized;
         }
         private void panel1_Paint(object sender, PaintEventArgs e) { }
         private void documentoPDFToolStripMenuItem_Click(object sender, EventArgs e)
@@ -56,7 +55,7 @@ namespace Gestor_de_estudos
                     }
                 }
             }
-            if(tabViewPDF.TabPages.Count == 0)
+            if (tabViewPDF.TabPages.Count == 0)
             {
                 tabViewPDF.Visible = false;
             }
@@ -67,7 +66,7 @@ namespace Gestor_de_estudos
             {
                 richEditTexto.Clear();
                 richEditTexto.Focus();
-            }        
+            }
         }
         private bool ChamaSalvarArquivo()
         {
@@ -75,8 +74,8 @@ namespace Gestor_de_estudos
             {
                 DialogResult = MessageBox.Show("Deseja Salvar o arquivo ?", "Salvar Arquivo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (DialogResult == DialogResult.Yes) { Editor.Salvar_Arquivo(richEditTexto); }
-                else if(DialogResult == DialogResult.No) { return true; }
-                else { return false; }                          
+                else if (DialogResult == DialogResult.No) { return true; }
+                else { return false; }
             }
             return true;
         }
@@ -122,7 +121,7 @@ namespace Gestor_de_estudos
         }
         private void toolStripDireita_Click(object sender, EventArgs e)
         {
-            richEditTexto.SelectionAlignment = HorizontalAlignment.Right;           
+            richEditTexto.SelectionAlignment = HorizontalAlignment.Right;
         }
         private void configuraçõesImpressãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -130,7 +129,7 @@ namespace Gestor_de_estudos
         }
         private void visualizarImpressãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            impressao.visualizaImpressao(richEditTexto,prntdoc1);
+            impressao.visualizaImpressao(richEditTexto, prntdoc1);
         }
         private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -158,13 +157,9 @@ namespace Gestor_de_estudos
                 MessageBox.Show("Nao conectado");
             }
         }
-        private void cbBanca_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
         private void btnAddBanca_Click(object sender, EventArgs e)
         {
-            addQuestoes.addBanca(objConection, this);          
+            addQuestoes.addBanca(tbNovaBanca.Text, this);
         }
         private void tbNovaBanca_MouseClick(object sender, MouseEventArgs e)
         {
@@ -172,7 +167,7 @@ namespace Gestor_de_estudos
         }
         private void btnAddArea_Click(object sender, EventArgs e)
         {
-            addQuestoes.addArea(objConection, this);
+            addQuestoes.addArea(tbNovaArea.Text, this);
         }
         private void tbNovaArea_Click(object sender, EventArgs e)
         {
@@ -180,11 +175,11 @@ namespace Gestor_de_estudos
         }
         private void btnAddMateria_Click(object sender, EventArgs e)
         {
-            addQuestoes.addMateria(objConection, this);
+            addQuestoes.addMateria(tbNovaMateria.Text, this);
         }
         private void btnAddAssunto_Click(object sender, EventArgs e)
         {
-            addQuestoes.addAssunto(objConection, this);
+            addQuestoes.addAssunto(tbNovoAssunto.Text, this);
         }
         private void tbNovaMateria_Click(object sender, EventArgs e)
         {
@@ -194,16 +189,31 @@ namespace Gestor_de_estudos
         {
             tbNovoAssunto.Text = "";
         }
-        private void button4_Click(object sender, EventArgs e)
-        {
-            addQuestoes.atualizarAtributosQuestoes(objConection, this);
-        }
-
         private void btnAddQuestao_Click(object sender, EventArgs e)
         {
             Questoes questao = new Questoes(cbArea.Text, cbMateria.Text, cbAssunto.Text, cbBanca.Text, richEnunciado.Text, richAltA.Text, richAltB.Text, richAltC.Text, richAltD.Text, richAltE.Text, rdbletraA.Checked, rdbletraB.Checked, rdbletraC.Checked, rdbletraD.Checked, rdbletraE.Checked);
             AddQuestoes addQuestoes = new AddQuestoes();
             addQuestoes.AddQuestão(objConection, questao);
+        }
+        private void cbAssunto_Click(object sender, EventArgs e)
+        {
+            ComboBox combo = this.cbAssunto;
+            addQuestoes.AtualizaAtributosQuestoes(combo, "assunto.gte");
+        }
+        private void cbMateria_Click(object sender, EventArgs e)
+        {
+            ComboBox combo = this.cbMateria; 
+            addQuestoes.AtualizaAtributosQuestoes(combo, "materia.gte");
+        }
+        private void cbBanca_Click(object sender, EventArgs e)
+        {
+            ComboBox combo = this.cbBanca;         
+            addQuestoes.AtualizaAtributosQuestoes(combo, "banca.gte");           
+        }
+        private void cbArea_Click(object sender, EventArgs e)
+        {
+            ComboBox combo = this.cbArea;
+            addQuestoes.AtualizaAtributosQuestoes(combo, "area.gte");
         }
     }
 }

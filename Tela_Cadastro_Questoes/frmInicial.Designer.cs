@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicial));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnNavegador = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -118,6 +117,10 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.miniToolStrip = new System.Windows.Forms.MenuStrip();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menuStripPrincipal.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -135,7 +138,6 @@
             this.panel1.AutoScroll = true;
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.btnNavegador);
             this.panel1.Controls.Add(this.button1);
@@ -145,19 +147,9 @@
             this.panel1.Controls.Add(this.btnEstatisticas);
             this.panel1.Location = new System.Drawing.Point(4, 31);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(138, 698);
+            this.panel1.Size = new System.Drawing.Size(138, 859);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(30, 261);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Carregar grid";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -294,7 +286,7 @@
             this.tabViewPDF.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
             this.tabViewPDF.Name = "tabViewPDF";
             this.tabViewPDF.SelectedIndex = 0;
-            this.tabViewPDF.Size = new System.Drawing.Size(480, 672);
+            this.tabViewPDF.Size = new System.Drawing.Size(480, 833);
             this.tabViewPDF.TabIndex = 4;
             this.tabViewPDF.Visible = false;
             this.tabViewPDF.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabViewPDF_DrawItem);
@@ -329,6 +321,10 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Controls.Add(this.label4);
+            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.tbNovaArea);
             this.tabPage3.Controls.Add(this.tbNovaMateria);
             this.tabPage3.Controls.Add(this.tbNovoAssunto);
@@ -357,7 +353,7 @@
             this.tabPage3.Controls.Add(this.cbBanca);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(691, 672);
+            this.tabPage3.Size = new System.Drawing.Size(691, 833);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Adicionar Questão";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -365,7 +361,8 @@
             // 
             // tbNovaArea
             // 
-            this.tbNovaArea.Location = new System.Drawing.Point(59, 104);
+            this.tbNovaArea.Location = new System.Drawing.Point(61, 126);
+            this.tbNovaArea.MaxLength = 20;
             this.tbNovaArea.Name = "tbNovaArea";
             this.tbNovaArea.Size = new System.Drawing.Size(165, 20);
             this.tbNovaArea.TabIndex = 26;
@@ -374,7 +371,7 @@
             // 
             // tbNovaMateria
             // 
-            this.tbNovaMateria.Location = new System.Drawing.Point(272, 43);
+            this.tbNovaMateria.Location = new System.Drawing.Point(274, 57);
             this.tbNovaMateria.Name = "tbNovaMateria";
             this.tbNovaMateria.Size = new System.Drawing.Size(179, 20);
             this.tbNovaMateria.TabIndex = 25;
@@ -383,7 +380,7 @@
             // 
             // tbNovoAssunto
             // 
-            this.tbNovoAssunto.Location = new System.Drawing.Point(272, 104);
+            this.tbNovoAssunto.Location = new System.Drawing.Point(274, 126);
             this.tbNovoAssunto.Name = "tbNovoAssunto";
             this.tbNovoAssunto.Size = new System.Drawing.Size(179, 20);
             this.tbNovoAssunto.TabIndex = 24;
@@ -392,7 +389,7 @@
             // 
             // tbNovaBanca
             // 
-            this.tbNovaBanca.Location = new System.Drawing.Point(59, 43);
+            this.tbNovaBanca.Location = new System.Drawing.Point(61, 57);
             this.tbNovaBanca.Name = "tbNovaBanca";
             this.tbNovaBanca.Size = new System.Drawing.Size(165, 20);
             this.tbNovaBanca.TabIndex = 23;
@@ -402,7 +399,7 @@
             // btnAddArea
             // 
             this.btnAddArea.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
-            this.btnAddArea.Location = new System.Drawing.Point(17, 104);
+            this.btnAddArea.Location = new System.Drawing.Point(19, 126);
             this.btnAddArea.Name = "btnAddArea";
             this.btnAddArea.Size = new System.Drawing.Size(36, 20);
             this.btnAddArea.TabIndex = 22;
@@ -412,7 +409,7 @@
             // btnAddMateria
             // 
             this.btnAddMateria.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
-            this.btnAddMateria.Location = new System.Drawing.Point(230, 43);
+            this.btnAddMateria.Location = new System.Drawing.Point(232, 57);
             this.btnAddMateria.Name = "btnAddMateria";
             this.btnAddMateria.Size = new System.Drawing.Size(36, 20);
             this.btnAddMateria.TabIndex = 21;
@@ -422,7 +419,7 @@
             // btnAddAssunto
             // 
             this.btnAddAssunto.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
-            this.btnAddAssunto.Location = new System.Drawing.Point(230, 103);
+            this.btnAddAssunto.Location = new System.Drawing.Point(232, 125);
             this.btnAddAssunto.Name = "btnAddAssunto";
             this.btnAddAssunto.Size = new System.Drawing.Size(36, 21);
             this.btnAddAssunto.TabIndex = 20;
@@ -432,7 +429,7 @@
             // btnAddBanca
             // 
             this.btnAddBanca.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
-            this.btnAddBanca.Location = new System.Drawing.Point(17, 43);
+            this.btnAddBanca.Location = new System.Drawing.Point(19, 57);
             this.btnAddBanca.Name = "btnAddBanca";
             this.btnAddBanca.Size = new System.Drawing.Size(36, 20);
             this.btnAddBanca.TabIndex = 19;
@@ -441,9 +438,9 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(658, 316);
+            this.label1.Location = new System.Drawing.Point(657, 367);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(15, 284);
+            this.label1.Size = new System.Drawing.Size(15, 394);
             this.label1.TabIndex = 18;
             this.label1.Text = "ALTERNATIVAS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -451,7 +448,7 @@
             // rdbletraE
             // 
             this.rdbletraE.AutoSize = true;
-            this.rdbletraE.Location = new System.Drawing.Point(38, 567);
+            this.rdbletraE.Location = new System.Drawing.Point(38, 718);
             this.rdbletraE.Name = "rdbletraE";
             this.rdbletraE.Size = new System.Drawing.Size(14, 13);
             this.rdbletraE.TabIndex = 17;
@@ -461,7 +458,7 @@
             // rdbletraD
             // 
             this.rdbletraD.AutoSize = true;
-            this.rdbletraD.Location = new System.Drawing.Point(38, 507);
+            this.rdbletraD.Location = new System.Drawing.Point(38, 638);
             this.rdbletraD.Name = "rdbletraD";
             this.rdbletraD.Size = new System.Drawing.Size(14, 13);
             this.rdbletraD.TabIndex = 16;
@@ -471,7 +468,7 @@
             // rdbletraC
             // 
             this.rdbletraC.AutoSize = true;
-            this.rdbletraC.Location = new System.Drawing.Point(38, 453);
+            this.rdbletraC.Location = new System.Drawing.Point(38, 554);
             this.rdbletraC.Name = "rdbletraC";
             this.rdbletraC.Size = new System.Drawing.Size(14, 13);
             this.rdbletraC.TabIndex = 15;
@@ -481,7 +478,7 @@
             // rdbletraB
             // 
             this.rdbletraB.AutoSize = true;
-            this.rdbletraB.Location = new System.Drawing.Point(38, 393);
+            this.rdbletraB.Location = new System.Drawing.Point(38, 472);
             this.rdbletraB.Name = "rdbletraB";
             this.rdbletraB.Size = new System.Drawing.Size(14, 13);
             this.rdbletraB.TabIndex = 14;
@@ -491,7 +488,7 @@
             // rdbletraA
             // 
             this.rdbletraA.AutoSize = true;
-            this.rdbletraA.Location = new System.Drawing.Point(38, 333);
+            this.rdbletraA.Location = new System.Drawing.Point(38, 395);
             this.rdbletraA.Name = "rdbletraA";
             this.rdbletraA.Size = new System.Drawing.Size(14, 13);
             this.rdbletraA.TabIndex = 12;
@@ -500,9 +497,9 @@
             // 
             // lblEnunciado
             // 
-            this.lblEnunciado.Location = new System.Drawing.Point(22, 149);
+            this.lblEnunciado.Location = new System.Drawing.Point(17, 152);
             this.lblEnunciado.Name = "lblEnunciado";
-            this.lblEnunciado.Size = new System.Drawing.Size(15, 139);
+            this.lblEnunciado.Size = new System.Drawing.Size(15, 209);
             this.lblEnunciado.TabIndex = 11;
             this.lblEnunciado.Text = "ENUNCIADO";
             this.lblEnunciado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -510,64 +507,64 @@
             // richAltD
             // 
             this.richAltD.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.richAltD.Location = new System.Drawing.Point(65, 490);
+            this.richAltD.Location = new System.Drawing.Point(65, 607);
             this.richAltD.Name = "richAltD";
-            this.richAltD.Size = new System.Drawing.Size(587, 52);
+            this.richAltD.Size = new System.Drawing.Size(587, 74);
             this.richAltD.TabIndex = 10;
             this.richAltD.Text = "";
             // 
             // richAltE
             // 
             this.richAltE.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.richAltE.Location = new System.Drawing.Point(65, 548);
+            this.richAltE.Location = new System.Drawing.Point(64, 687);
             this.richAltE.Name = "richAltE";
-            this.richAltE.Size = new System.Drawing.Size(587, 52);
+            this.richAltE.Size = new System.Drawing.Size(587, 74);
             this.richAltE.TabIndex = 9;
             this.richAltE.Text = "";
             // 
             // richAltC
             // 
             this.richAltC.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.richAltC.Location = new System.Drawing.Point(65, 432);
+            this.richAltC.Location = new System.Drawing.Point(64, 527);
             this.richAltC.Name = "richAltC";
-            this.richAltC.Size = new System.Drawing.Size(587, 52);
+            this.richAltC.Size = new System.Drawing.Size(587, 74);
             this.richAltC.TabIndex = 8;
             this.richAltC.Text = "";
             // 
             // richAltB
             // 
             this.richAltB.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.richAltB.Location = new System.Drawing.Point(65, 374);
+            this.richAltB.Location = new System.Drawing.Point(65, 447);
             this.richAltB.Name = "richAltB";
-            this.richAltB.Size = new System.Drawing.Size(587, 52);
+            this.richAltB.Size = new System.Drawing.Size(587, 74);
             this.richAltB.TabIndex = 7;
             this.richAltB.Text = "";
             // 
             // richAltA
             // 
             this.richAltA.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.richAltA.Location = new System.Drawing.Point(65, 316);
+            this.richAltA.Location = new System.Drawing.Point(65, 367);
             this.richAltA.Name = "richAltA";
-            this.richAltA.Size = new System.Drawing.Size(587, 52);
+            this.richAltA.Size = new System.Drawing.Size(587, 74);
             this.richAltA.TabIndex = 6;
             this.richAltA.Text = "";
             // 
             // richEnunciado
             // 
             this.richEnunciado.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.richEnunciado.Location = new System.Drawing.Point(39, 149);
+            this.richEnunciado.Location = new System.Drawing.Point(38, 152);
             this.richEnunciado.Name = "richEnunciado";
-            this.richEnunciado.Size = new System.Drawing.Size(634, 139);
+            this.richEnunciado.Size = new System.Drawing.Size(634, 209);
             this.richEnunciado.TabIndex = 5;
             this.richEnunciado.Text = "";
             // 
             // btnAddQuestao
             // 
             this.btnAddQuestao.AutoSize = true;
-            this.btnAddQuestao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddQuestao.Location = new System.Drawing.Point(457, 14);
+            this.btnAddQuestao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddQuestao.Location = new System.Drawing.Point(458, 28);
             this.btnAddQuestao.Name = "btnAddQuestao";
-            this.btnAddQuestao.Size = new System.Drawing.Size(216, 110);
+            this.btnAddQuestao.Size = new System.Drawing.Size(216, 118);
             this.btnAddQuestao.TabIndex = 4;
             this.btnAddQuestao.Text = "ADICIONAR QUESTÃO";
             this.btnAddQuestao.UseVisualStyleBackColor = true;
@@ -575,52 +572,47 @@
             // 
             // cbAssunto
             // 
+            this.cbAssunto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAssunto.FormattingEnabled = true;
-            this.cbAssunto.Items.AddRange(new object[] {
-            "Polimorfismo"});
-            this.cbAssunto.Location = new System.Drawing.Point(230, 76);
+            this.cbAssunto.Location = new System.Drawing.Point(232, 98);
             this.cbAssunto.Name = "cbAssunto";
             this.cbAssunto.Size = new System.Drawing.Size(221, 23);
             this.cbAssunto.TabIndex = 3;
-            this.cbAssunto.Text = "ASSUNTO";
+            this.cbAssunto.Click += new System.EventHandler(this.cbAssunto_Click);
             // 
             // cbArea
             // 
+            this.cbArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbArea.FormattingEnabled = true;
-            this.cbArea.Items.AddRange(new object[] {
-            "Tecnologia da Informação"});
-            this.cbArea.Location = new System.Drawing.Point(17, 76);
+            this.cbArea.Location = new System.Drawing.Point(19, 98);
             this.cbArea.Name = "cbArea";
             this.cbArea.Size = new System.Drawing.Size(207, 23);
             this.cbArea.TabIndex = 2;
-            this.cbArea.Text = "AREA";
+            this.cbArea.Click += new System.EventHandler(this.cbArea_Click);
             // 
             // cbMateria
             // 
+            this.cbMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMateria.FormattingEnabled = true;
-            this.cbMateria.Items.AddRange(new object[] {
-            "POO"});
-            this.cbMateria.Location = new System.Drawing.Point(230, 14);
+            this.cbMateria.Location = new System.Drawing.Point(232, 28);
             this.cbMateria.Name = "cbMateria";
             this.cbMateria.Size = new System.Drawing.Size(221, 23);
             this.cbMateria.TabIndex = 1;
-            this.cbMateria.Text = "MATERIA";
+            this.cbMateria.Click += new System.EventHandler(this.cbMateria_Click);
             // 
             // cbBanca
             // 
+            this.cbBanca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBanca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBanca.FormattingEnabled = true;
-            this.cbBanca.Items.AddRange(new object[] {
-            "CESPE"});
-            this.cbBanca.Location = new System.Drawing.Point(17, 14);
+            this.cbBanca.Location = new System.Drawing.Point(19, 28);
             this.cbBanca.Name = "cbBanca";
             this.cbBanca.Size = new System.Drawing.Size(207, 23);
             this.cbBanca.TabIndex = 0;
-            this.cbBanca.Text = "BANCA";
-            this.cbBanca.SelectedIndexChanged += new System.EventHandler(this.cbBanca_SelectedIndexChanged);
+            this.cbBanca.Click += new System.EventHandler(this.cbBanca_Click);
             // 
             // tabPage2
             // 
@@ -1044,15 +1036,51 @@
             this.tabControl1.MaximumSize = new System.Drawing.Size(954, 1900);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(699, 698);
+            this.tabControl1.Size = new System.Drawing.Size(699, 859);
             this.tabControl1.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "BANCA";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(232, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "MATÉRIA";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 81);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "AREA";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(232, 82);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 13);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "ASSUNTO";
             // 
             // frmInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.ClientSize = new System.Drawing.Size(1362, 902);
             this.Controls.Add(this.tabViewPDF);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
@@ -1168,6 +1196,9 @@
         public System.Windows.Forms.TextBox tbNovaArea;
         public System.Windows.Forms.TextBox tbNovaMateria;
         public System.Windows.Forms.TextBox tbNovoAssunto;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
