@@ -12,7 +12,7 @@ namespace Tela_Cadastro_Questoes
     {
         List<Questoes> listaSimulado;
 
-        public public BuscarQuestoes(OleDbConnection objConection, int num, string ban, string ar, string assun, string mat)
+        public void BuscarQuestoes(OleDbConnection objConection, int num, string ban, string ar, string assun, string mat)
         {
             DataSet ds = new DataSet();
             if (ban == "")

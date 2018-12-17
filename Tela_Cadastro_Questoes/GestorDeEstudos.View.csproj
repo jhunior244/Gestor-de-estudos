@@ -60,6 +60,12 @@
     <Compile Include="AddQuestoes.cs" />
     <Compile Include="Alternativas.cs" />
     <Compile Include="Comentarios.cs" />
+    <Compile Include="ControleExibeQuestao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControleExibeQuestao.Designer.cs">
+      <DependentUpon>ControleExibeQuestao.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControleImpressao.cs" />
     <Compile Include="dbQuestoesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -85,6 +91,9 @@
     <Compile Include="Questoes.cs" />
     <Compile Include="ValidadeResposta.cs" />
     <Compile Include="VisualisadorPDF.cs" />
+    <EmbeddedResource Include="ControleExibeQuestao.resx">
+      <DependentUpon>ControleExibeQuestao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCadastroQuestoes.resx">
       <DependentUpon>frmCadastroQuestoes.cs</DependentUpon>
     </EmbeddedResource>

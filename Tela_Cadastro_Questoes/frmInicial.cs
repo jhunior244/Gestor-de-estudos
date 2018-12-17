@@ -237,7 +237,7 @@ namespace Gestor_de_estudos
         }
         private void btnGerarSimulado_Click(object sender, EventArgs e)
         {
-            DataSet data = gerador.BuscarQuestoes(objConection, Convert.ToInt32(tbQtdQuestoes.Text), cbBancaNewSimulado.Text, cbAreaNewSimulado.Text, cbAssuntoNewSimulado.Text, cbMateriaNewSimulado.Text);
+            gerador.BuscarQuestoes(objConection, Convert.ToInt32(tbQtdQuestoes.Text), cbBancaNewSimulado.Text, cbAreaNewSimulado.Text, cbAssuntoNewSimulado.Text, cbMateriaNewSimulado.Text);
             
         }
     }
