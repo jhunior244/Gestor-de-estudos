@@ -77,7 +77,12 @@
             this.cbArea = new System.Windows.Forms.ComboBox();
             this.cbMateria = new System.Windows.Forms.ComboBox();
             this.cbBanca = new System.Windows.Forms.ComboBox();
+            this.btnAddArea = new System.Windows.Forms.Button();
+            this.btnAddMateria = new System.Windows.Forms.Button();
+            this.btnAddAssunto = new System.Windows.Forms.Button();
+            this.btnAddBanca = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.controleExibeQuestao1 = new Tela_Cadastro_Questoes.ControleExibeQuestao();
             this.label9 = new System.Windows.Forms.Label();
             this.cbAreaNewSimulado = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -94,18 +99,6 @@
             this.cbxArea = new System.Windows.Forms.ComboBox();
             this.cbxAssunto = new System.Windows.Forms.ComboBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.dsfdsfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dfdsfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.configuraçõesImpressãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.visualizarImpressãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.richEditTexto = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.miniToolStrip = new System.Windows.Forms.MenuStrip();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.toolStripNovo = new System.Windows.Forms.ToolStripButton();
             this.toolStripAbrit = new System.Windows.Forms.ToolStripButton();
             this.toolStripSalvar = new System.Windows.Forms.ToolStripButton();
@@ -121,11 +114,18 @@
             this.toolStripViewImpressao = new System.Windows.Forms.ToolStripButton();
             this.toolStripImprimir = new System.Windows.Forms.ToolStripButton();
             this.toolStripAjuda = new System.Windows.Forms.ToolStripButton();
-            this.btnAddArea = new System.Windows.Forms.Button();
-            this.btnAddMateria = new System.Windows.Forms.Button();
-            this.btnAddAssunto = new System.Windows.Forms.Button();
-            this.btnAddBanca = new System.Windows.Forms.Button();
-            this.controleExibeQuestao1 = new Tela_Cadastro_Questoes.ControleExibeQuestao();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.dsfdsfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dfdsfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuraçõesImpressãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizarImpressãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.richEditTexto = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.miniToolStrip = new System.Windows.Forms.MenuStrip();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.panel1.SuspendLayout();
             this.menuStripPrincipal.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -152,7 +152,7 @@
             this.panel1.Controls.Add(this.btnEstatisticas);
             this.panel1.Location = new System.Drawing.Point(4, 31);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(138, 859);
+            this.panel1.Size = new System.Drawing.Size(138, 650);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -232,7 +232,7 @@
             this.ajudaToolStripMenuItem});
             this.menuStripPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuStripPrincipal.Name = "menuStripPrincipal";
-            this.menuStripPrincipal.Size = new System.Drawing.Size(1362, 28);
+            this.menuStripPrincipal.Size = new System.Drawing.Size(1276, 28);
             this.menuStripPrincipal.TabIndex = 3;
             // 
             // arquivoToolStripMenuItem
@@ -291,7 +291,7 @@
             this.tabViewPDF.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
             this.tabViewPDF.Name = "tabViewPDF";
             this.tabViewPDF.SelectedIndex = 0;
-            this.tabViewPDF.Size = new System.Drawing.Size(480, 833);
+            this.tabViewPDF.Size = new System.Drawing.Size(480, 624);
             this.tabViewPDF.TabIndex = 4;
             this.tabViewPDF.Visible = false;
             this.tabViewPDF.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabViewPDF_DrawItem);
@@ -615,6 +615,46 @@
             this.cbBanca.TabIndex = 0;
             this.cbBanca.Click += new System.EventHandler(this.cbBanca_Click);
             // 
+            // btnAddArea
+            // 
+            this.btnAddArea.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
+            this.btnAddArea.Location = new System.Drawing.Point(19, 126);
+            this.btnAddArea.Name = "btnAddArea";
+            this.btnAddArea.Size = new System.Drawing.Size(36, 20);
+            this.btnAddArea.TabIndex = 22;
+            this.btnAddArea.UseVisualStyleBackColor = true;
+            this.btnAddArea.Click += new System.EventHandler(this.btnAddArea_Click);
+            // 
+            // btnAddMateria
+            // 
+            this.btnAddMateria.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
+            this.btnAddMateria.Location = new System.Drawing.Point(232, 57);
+            this.btnAddMateria.Name = "btnAddMateria";
+            this.btnAddMateria.Size = new System.Drawing.Size(36, 20);
+            this.btnAddMateria.TabIndex = 21;
+            this.btnAddMateria.UseVisualStyleBackColor = true;
+            this.btnAddMateria.Click += new System.EventHandler(this.btnAddMateria_Click);
+            // 
+            // btnAddAssunto
+            // 
+            this.btnAddAssunto.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
+            this.btnAddAssunto.Location = new System.Drawing.Point(232, 125);
+            this.btnAddAssunto.Name = "btnAddAssunto";
+            this.btnAddAssunto.Size = new System.Drawing.Size(36, 21);
+            this.btnAddAssunto.TabIndex = 20;
+            this.btnAddAssunto.UseVisualStyleBackColor = true;
+            this.btnAddAssunto.Click += new System.EventHandler(this.btnAddAssunto_Click);
+            // 
+            // btnAddBanca
+            // 
+            this.btnAddBanca.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
+            this.btnAddBanca.Location = new System.Drawing.Point(19, 57);
+            this.btnAddBanca.Name = "btnAddBanca";
+            this.btnAddBanca.Size = new System.Drawing.Size(36, 20);
+            this.btnAddBanca.TabIndex = 19;
+            this.btnAddBanca.UseVisualStyleBackColor = true;
+            this.btnAddBanca.Click += new System.EventHandler(this.btnAddBanca_Click);
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.controleExibeQuestao1);
@@ -631,10 +671,21 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(691, 833);
+            this.tabPage2.Size = new System.Drawing.Size(691, 624);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Novo Simulado";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // controleExibeQuestao1
+            // 
+            this.controleExibeQuestao1.AutoScroll = true;
+            this.controleExibeQuestao1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.controleExibeQuestao1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.controleExibeQuestao1.Location = new System.Drawing.Point(39, 49);
+            this.controleExibeQuestao1.Margin = new System.Windows.Forms.Padding(4);
+            this.controleExibeQuestao1.Name = "controleExibeQuestao1";
+            this.controleExibeQuestao1.Size = new System.Drawing.Size(592, 753);
+            this.controleExibeQuestao1.TabIndex = 36;
             // 
             // label9
             // 
@@ -752,7 +803,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(691, 833);
+            this.tabPage1.Size = new System.Drawing.Size(691, 624);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Resumos";
             // 
@@ -827,116 +878,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(370, 27);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dsfdsfToolStripMenuItem,
-            this.dfdsfToolStripMenuItem,
-            this.ajudaToolStripMenuItem1,
-            this.sobreToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(685, 24);
-            this.menuStrip1.TabIndex = 11;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // dsfdsfToolStripMenuItem
-            // 
-            this.dsfdsfToolStripMenuItem.Name = "dsfdsfToolStripMenuItem";
-            this.dsfdsfToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.dsfdsfToolStripMenuItem.Text = "Inicio";
-            // 
-            // dfdsfToolStripMenuItem
-            // 
-            this.dfdsfToolStripMenuItem.Name = "dfdsfToolStripMenuItem";
-            this.dfdsfToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.dfdsfToolStripMenuItem.Text = "Editar";
-            // 
-            // ajudaToolStripMenuItem1
-            // 
-            this.ajudaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.configuraçõesImpressãoToolStripMenuItem,
-            this.visualizarImpressãoToolStripMenuItem,
-            this.imprimirToolStripMenuItem});
-            this.ajudaToolStripMenuItem1.Name = "ajudaToolStripMenuItem1";
-            this.ajudaToolStripMenuItem1.Size = new System.Drawing.Size(73, 20);
-            this.ajudaToolStripMenuItem1.Text = "Impressão";
-            // 
-            // configuraçõesImpressãoToolStripMenuItem
-            // 
-            this.configuraçõesImpressãoToolStripMenuItem.Name = "configuraçõesImpressãoToolStripMenuItem";
-            this.configuraçõesImpressãoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.configuraçõesImpressãoToolStripMenuItem.Text = "Configurações Impressão";
-            this.configuraçõesImpressãoToolStripMenuItem.Click += new System.EventHandler(this.configuraçõesImpressãoToolStripMenuItem_Click);
-            // 
-            // visualizarImpressãoToolStripMenuItem
-            // 
-            this.visualizarImpressãoToolStripMenuItem.Name = "visualizarImpressãoToolStripMenuItem";
-            this.visualizarImpressãoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.visualizarImpressãoToolStripMenuItem.Text = "Visualizar Impressão";
-            this.visualizarImpressãoToolStripMenuItem.Click += new System.EventHandler(this.visualizarImpressãoToolStripMenuItem_Click);
-            // 
-            // imprimirToolStripMenuItem
-            // 
-            this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
-            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.imprimirToolStripMenuItem.Text = "Imprimir";
-            this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
-            // 
-            // sobreToolStripMenuItem
-            // 
-            this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.sobreToolStripMenuItem.Text = "Ajuda";
-            // 
-            // richEditTexto
-            // 
-            this.richEditTexto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.richEditTexto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richEditTexto.Location = new System.Drawing.Point(76, 119);
-            this.richEditTexto.Name = "richEditTexto";
-            this.richEditTexto.Size = new System.Drawing.Size(539, 531);
-            this.richEditTexto.TabIndex = 0;
-            this.richEditTexto.Text = "";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(38, 88);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(613, 578);
-            this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = "";
-            // 
-            // miniToolStrip
-            // 
-            this.miniToolStrip.AccessibleName = "Nova seleção de item";
-            this.miniToolStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.ComboBox;
-            this.miniToolStrip.AutoSize = false;
-            this.miniToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.miniToolStrip.Location = new System.Drawing.Point(226, 2);
-            this.miniToolStrip.Name = "miniToolStrip";
-            this.miniToolStrip.Size = new System.Drawing.Size(789, 24);
-            this.miniToolStrip.TabIndex = 11;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Location = new System.Drawing.Point(145, 31);
-            this.tabControl1.MaximumSize = new System.Drawing.Size(954, 1900);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(699, 859);
-            this.tabControl1.TabIndex = 2;
             // 
             // toolStripNovo
             // 
@@ -1085,59 +1026,122 @@
             this.toolStripAjuda.Size = new System.Drawing.Size(23, 20);
             this.toolStripAjuda.Text = "Ajuda";
             // 
-            // btnAddArea
+            // menuStrip1
             // 
-            this.btnAddArea.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
-            this.btnAddArea.Location = new System.Drawing.Point(19, 126);
-            this.btnAddArea.Name = "btnAddArea";
-            this.btnAddArea.Size = new System.Drawing.Size(36, 20);
-            this.btnAddArea.TabIndex = 22;
-            this.btnAddArea.UseVisualStyleBackColor = true;
-            this.btnAddArea.Click += new System.EventHandler(this.btnAddArea_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dsfdsfToolStripMenuItem,
+            this.dfdsfToolStripMenuItem,
+            this.ajudaToolStripMenuItem1,
+            this.sobreToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(685, 24);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // btnAddMateria
+            // dsfdsfToolStripMenuItem
             // 
-            this.btnAddMateria.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
-            this.btnAddMateria.Location = new System.Drawing.Point(232, 57);
-            this.btnAddMateria.Name = "btnAddMateria";
-            this.btnAddMateria.Size = new System.Drawing.Size(36, 20);
-            this.btnAddMateria.TabIndex = 21;
-            this.btnAddMateria.UseVisualStyleBackColor = true;
-            this.btnAddMateria.Click += new System.EventHandler(this.btnAddMateria_Click);
+            this.dsfdsfToolStripMenuItem.Name = "dsfdsfToolStripMenuItem";
+            this.dsfdsfToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.dsfdsfToolStripMenuItem.Text = "Inicio";
             // 
-            // btnAddAssunto
+            // dfdsfToolStripMenuItem
             // 
-            this.btnAddAssunto.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
-            this.btnAddAssunto.Location = new System.Drawing.Point(232, 125);
-            this.btnAddAssunto.Name = "btnAddAssunto";
-            this.btnAddAssunto.Size = new System.Drawing.Size(36, 21);
-            this.btnAddAssunto.TabIndex = 20;
-            this.btnAddAssunto.UseVisualStyleBackColor = true;
-            this.btnAddAssunto.Click += new System.EventHandler(this.btnAddAssunto_Click);
+            this.dfdsfToolStripMenuItem.Name = "dfdsfToolStripMenuItem";
+            this.dfdsfToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.dfdsfToolStripMenuItem.Text = "Editar";
             // 
-            // btnAddBanca
+            // ajudaToolStripMenuItem1
             // 
-            this.btnAddBanca.Image = global::Tela_Cadastro_Questoes.Properties.Resources.icons8_adicionar_50;
-            this.btnAddBanca.Location = new System.Drawing.Point(19, 57);
-            this.btnAddBanca.Name = "btnAddBanca";
-            this.btnAddBanca.Size = new System.Drawing.Size(36, 20);
-            this.btnAddBanca.TabIndex = 19;
-            this.btnAddBanca.UseVisualStyleBackColor = true;
-            this.btnAddBanca.Click += new System.EventHandler(this.btnAddBanca_Click);
+            this.ajudaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.configuraçõesImpressãoToolStripMenuItem,
+            this.visualizarImpressãoToolStripMenuItem,
+            this.imprimirToolStripMenuItem});
+            this.ajudaToolStripMenuItem1.Name = "ajudaToolStripMenuItem1";
+            this.ajudaToolStripMenuItem1.Size = new System.Drawing.Size(73, 20);
+            this.ajudaToolStripMenuItem1.Text = "Impressão";
             // 
-            // controleExibeQuestao1
+            // configuraçõesImpressãoToolStripMenuItem
             // 
-            this.controleExibeQuestao1.Location = new System.Drawing.Point(39, 49);
-            this.controleExibeQuestao1.Name = "controleExibeQuestao1";
-            this.controleExibeQuestao1.Size = new System.Drawing.Size(592, 753);
-            this.controleExibeQuestao1.TabIndex = 36;
+            this.configuraçõesImpressãoToolStripMenuItem.Name = "configuraçõesImpressãoToolStripMenuItem";
+            this.configuraçõesImpressãoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.configuraçõesImpressãoToolStripMenuItem.Text = "Configurações Impressão";
+            this.configuraçõesImpressãoToolStripMenuItem.Click += new System.EventHandler(this.configuraçõesImpressãoToolStripMenuItem_Click);
+            // 
+            // visualizarImpressãoToolStripMenuItem
+            // 
+            this.visualizarImpressãoToolStripMenuItem.Name = "visualizarImpressãoToolStripMenuItem";
+            this.visualizarImpressãoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.visualizarImpressãoToolStripMenuItem.Text = "Visualizar Impressão";
+            this.visualizarImpressãoToolStripMenuItem.Click += new System.EventHandler(this.visualizarImpressãoToolStripMenuItem_Click);
+            // 
+            // imprimirToolStripMenuItem
+            // 
+            this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
+            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.imprimirToolStripMenuItem.Text = "Imprimir";
+            this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
+            // 
+            // sobreToolStripMenuItem
+            // 
+            this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.sobreToolStripMenuItem.Text = "Ajuda";
+            // 
+            // richEditTexto
+            // 
+            this.richEditTexto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.richEditTexto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richEditTexto.Location = new System.Drawing.Point(76, 119);
+            this.richEditTexto.Name = "richEditTexto";
+            this.richEditTexto.Size = new System.Drawing.Size(539, 471);
+            this.richEditTexto.TabIndex = 0;
+            this.richEditTexto.Text = "";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.richTextBox1.Enabled = false;
+            this.richTextBox1.Location = new System.Drawing.Point(38, 88);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(613, 530);
+            this.richTextBox1.TabIndex = 10;
+            this.richTextBox1.Text = "";
+            // 
+            // miniToolStrip
+            // 
+            this.miniToolStrip.AccessibleName = "Nova seleção de item";
+            this.miniToolStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.ComboBox;
+            this.miniToolStrip.AutoSize = false;
+            this.miniToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.miniToolStrip.Location = new System.Drawing.Point(226, 2);
+            this.miniToolStrip.Name = "miniToolStrip";
+            this.miniToolStrip.Size = new System.Drawing.Size(789, 24);
+            this.miniToolStrip.TabIndex = 11;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Location = new System.Drawing.Point(145, 31);
+            this.tabControl1.MaximumSize = new System.Drawing.Size(954, 1900);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(699, 650);
+            this.tabControl1.TabIndex = 2;
             // 
             // frmInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(1362, 902);
+            this.ClientSize = new System.Drawing.Size(1276, 693);
             this.Controls.Add(this.tabViewPDF);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);

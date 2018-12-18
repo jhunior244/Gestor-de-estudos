@@ -9,6 +9,7 @@ namespace Tela_Cadastro_Questoes
     class Questoes
     {
         private int idQuest;
+        public int IdQuest { get { return this.idQuest; } }
         private string area;
         private string materia;
         private string assunto;
@@ -51,8 +52,6 @@ namespace Tela_Cadastro_Questoes
         private bool validadeE;
         public bool ValidadeE { get { return (this.validadeE); } }
 
-        
-
         public Questoes(string ar, string mat, string assun, string banc, string enun, string A, string B, string C, string D, string E, bool valA, bool valB, bool valC, bool valD, bool valE)
         {
             this.Area = ar;
@@ -60,19 +59,31 @@ namespace Tela_Cadastro_Questoes
             this.Assunto = assun;
             this.Banca = banc;
             this.enunciado = enun;
-
             this.alternativaA = A;
             this.alternativaB = B;
             this.alternativaC = C;
             this.alternativaD = D;
             this.alternativaE = E;
-
             this.validadeA = valA;
             this.validadeB = valB;
             this.validadeC = valC;
             this.validadeD = valD;
             this.validadeE = valE;
-
+        }
+        public Questoes(int id, string enun, string letraA, string letraB, string letraC, string letraD, string letraE, bool valA, bool valB,bool valC, bool valD, bool valE)
+        {
+            this.idQuest = id;
+            this.enunciado = enun;
+            this.alternativaA = letraA;
+            this.alternativaB = letraB;
+            this.alternativaC = letraC;
+            this.alternativaD = letraD;
+            this.alternativaE = letraE;
+            this.validadeA = valA;
+            this.validadeB = valB;
+            this.validadeC = valC;
+            this.validadeD = valD;
+            this.validadeE = valE;
         }
     }
 }

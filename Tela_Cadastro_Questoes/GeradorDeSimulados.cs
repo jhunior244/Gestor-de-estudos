@@ -11,9 +11,11 @@ namespace Tela_Cadastro_Questoes
     class GeradorDeSimulados
     {
         List<Questoes> listaSimulado;
-
+        Questoes[] simulado;
         public void BuscarQuestoes(OleDbConnection objConection, int num, string ban, string ar, string assun, string mat)
         {
+            int cont = 0;
+            listaSimulado = new List<Questoes>();
             DataSet ds = new DataSet();
             if (ban == "")
             {
@@ -34,14 +36,12 @@ namespace Tela_Cadastro_Questoes
             try
             {
                 objConection.Open();
-                string query = "select enunciado, alternativaA, alternativaB, alternativaC, alternativaD, alternativaE, validadeA, validadeB, validadeC, validadeD, validadeE from tb_questoes where banca = '"+ ban +"' and area = '"+ar+"' and assunto = '"+assun+"' and materia = '"+mat+"' ";
+                string query = "select enunciado, alternativaA, alternativaB, alternativaC, alternativaD, alternativaE, validadeA, validadeB, validadeC, validadeD, validadeE, idQuest from tb_questoes where banca = '" + ban + "' and area = '" + ar + "' and assunto = '" + assun + "' and materia = '" + mat + "' ";
                 OleDbCommand cmm = new OleDbCommand();
                 cmm.CommandText = query;
                 cmm.CommandType = CommandType.Text;
                 cmm.Connection = objConection;
-
                 OleDbDataReader dataReader = cmm.ExecuteReader();
-
                 while (dataReader.Read())
                 {
                     string enun = dataReader.GetString(0);
@@ -55,16 +55,48 @@ namespace Tela_Cadastro_Questoes
                     bool rc = dataReader.GetBoolean(8);
                     bool rd = dataReader.GetBoolean(9);
                     bool re = dataReader.GetBoolean(10);
-
+                    int id = dataReader.GetInt32(11);
+                    Questoes questao = new Questoes(id, enun, a, b, c, d, e, ra, rb, rc, rd, re);
+                    listaSimulado.Add(questao);
                 }
-                
-                
                 objConection.Close();
+                selectQuestoes(listaSimulado, num);
             }
-            catch(Exception erro)
+            catch (Exception erro)
             {
                 System.Windows.Forms.MessageBox.Show(erro.Message);
-            }            
-        } 
+            }
+        }
+        private Questoes[] selectQuestoes(List<Questoes> lista, int numQuestoes)
+        {
+            simulado = new Questoes[numQuestoes];
+            Random random = new Random();
+            int aux = 0;
+            while (aux < numQuestoes)
+            {
+                int posQuestao = random.Next(lista.Count);
+                if (!questaoJaAcicionada(lista[posQuestao].IdQuest))//verifica se a questao sorteada ja foi adicionada
+                {
+                    simulado[aux] = lista[posQuestao];
+                    aux++;
+                }
+            }
+            return simulado;
+        }
+        private bool questaoJaAcicionada(int id)
+        {
+            for (int i = 0; i < simulado.Length; i++)
+            {
+                if(simulado[i] != null)
+                {
+                    if (id == simulado[i].IdQuest)
+                    {
+                        return true;
+                    }
+                }
+               
+            }
+            return false;
+        }
     }
 }
