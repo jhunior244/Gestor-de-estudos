@@ -246,7 +246,11 @@ namespace Gestor_de_estudos
         private void btnProxQuest_Click(object sender, EventArgs e)
         {
             Questao quest = gerador.questAtual();
-            controleExibeQuestao1.ExibeQuestao(quest);
+            if(quest != null)
+            {
+                controleExibeQuestao1.ExibeQuestao(quest);
+            }
+           
         }
     }
 }

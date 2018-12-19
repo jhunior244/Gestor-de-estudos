@@ -123,6 +123,7 @@
             this.rdbB.Name = "rdbB";
             this.rdbB.Size = new System.Drawing.Size(14, 13);
             this.rdbB.TabIndex = 14;
+            this.rdbB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rdbB.UseVisualStyleBackColor = true;
             // 
             // label2
@@ -145,6 +146,7 @@
             this.rdbA.Name = "rdbA";
             this.rdbA.Size = new System.Drawing.Size(14, 13);
             this.rdbA.TabIndex = 12;
+            this.rdbA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rdbA.UseVisualStyleBackColor = true;
             // 
             // label1

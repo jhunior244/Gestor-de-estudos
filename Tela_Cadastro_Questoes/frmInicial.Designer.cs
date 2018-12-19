@@ -83,7 +83,6 @@
             this.btnAddBanca = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnProxQuest = new System.Windows.Forms.Button();
-            this.controleExibeQuestao1 = new Tela_Cadastro_Questoes.ControleExibeQuestao();
             this.label9 = new System.Windows.Forms.Label();
             this.cbAreaNewSimulado = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -127,6 +126,8 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.miniToolStrip = new System.Windows.Forms.MenuStrip();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.btnFinaSimulado = new System.Windows.Forms.Button();
+            this.controleExibeQuestao1 = new Tela_Cadastro_Questoes.ControleExibeQuestao();
             this.panel1.SuspendLayout();
             this.menuStripPrincipal.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -292,7 +293,7 @@
             this.tabViewPDF.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
             this.tabViewPDF.Name = "tabViewPDF";
             this.tabViewPDF.SelectedIndex = 0;
-            this.tabViewPDF.Size = new System.Drawing.Size(480, 832);
+            this.tabViewPDF.Size = new System.Drawing.Size(592, 832);
             this.tabViewPDF.TabIndex = 4;
             this.tabViewPDF.Visible = false;
             this.tabViewPDF.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabViewPDF_DrawItem);
@@ -658,6 +659,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnFinaSimulado);
             this.tabPage2.Controls.Add(this.btnProxQuest);
             this.tabPage2.Controls.Add(this.controleExibeQuestao1);
             this.tabPage2.Controls.Add(this.label9);
@@ -680,25 +682,14 @@
             // 
             // btnProxQuest
             // 
-            this.btnProxQuest.Location = new System.Drawing.Point(267, 722);
+            this.btnProxQuest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnProxQuest.Location = new System.Drawing.Point(198, 795);
             this.btnProxQuest.Name = "btnProxQuest";
             this.btnProxQuest.Size = new System.Drawing.Size(121, 34);
             this.btnProxQuest.TabIndex = 37;
             this.btnProxQuest.Text = "PROXIMA";
             this.btnProxQuest.UseVisualStyleBackColor = true;
             this.btnProxQuest.Click += new System.EventHandler(this.btnProxQuest_Click);
-            // 
-            // controleExibeQuestao1
-            // 
-            this.controleExibeQuestao1.AutoScroll = true;
-            this.controleExibeQuestao1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.controleExibeQuestao1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.controleExibeQuestao1.Location = new System.Drawing.Point(39, 49);
-            this.controleExibeQuestao1.Margin = new System.Windows.Forms.Padding(4);
-            this.controleExibeQuestao1.Name = "controleExibeQuestao1";
-            this.controleExibeQuestao1.Size = new System.Drawing.Size(592, 654);
-            this.controleExibeQuestao1.TabIndex = 36;
-            this.controleExibeQuestao1.Visible = false;
             // 
             // label9
             // 
@@ -1149,6 +1140,30 @@
             this.tabControl1.Size = new System.Drawing.Size(699, 858);
             this.tabControl1.TabIndex = 2;
             // 
+            // btnFinaSimulado
+            // 
+            this.btnFinaSimulado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnFinaSimulado.Location = new System.Drawing.Point(325, 795);
+            this.btnFinaSimulado.Name = "btnFinaSimulado";
+            this.btnFinaSimulado.Size = new System.Drawing.Size(121, 34);
+            this.btnFinaSimulado.TabIndex = 38;
+            this.btnFinaSimulado.Text = "FINALIZAR";
+            this.btnFinaSimulado.UseVisualStyleBackColor = true;
+            // 
+            // controleExibeQuestao1
+            // 
+            this.controleExibeQuestao1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.controleExibeQuestao1.AutoScroll = true;
+            this.controleExibeQuestao1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.controleExibeQuestao1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.controleExibeQuestao1.Location = new System.Drawing.Point(39, 49);
+            this.controleExibeQuestao1.Margin = new System.Windows.Forms.Padding(4);
+            this.controleExibeQuestao1.Name = "controleExibeQuestao1";
+            this.controleExibeQuestao1.Size = new System.Drawing.Size(592, 739);
+            this.controleExibeQuestao1.TabIndex = 36;
+            this.controleExibeQuestao1.Visible = false;
+            // 
             // frmInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1280,5 +1295,6 @@
         private System.Windows.Forms.Button btnGerarSimulado;
         private Tela_Cadastro_Questoes.ControleExibeQuestao controleExibeQuestao1;
         private System.Windows.Forms.Button btnProxQuest;
+        private System.Windows.Forms.Button btnFinaSimulado;
     }
 }

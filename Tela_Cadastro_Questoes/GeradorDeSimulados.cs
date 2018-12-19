@@ -100,7 +100,7 @@ namespace Tela_Cadastro_Questoes
         }
         public Questao questAtual()
         {
-            if(contQuest < simulado.Length)
+            if(contQuest < simulado.Length -1)
             {
                 contQuest++;
                 return Simulado[contQuest];
