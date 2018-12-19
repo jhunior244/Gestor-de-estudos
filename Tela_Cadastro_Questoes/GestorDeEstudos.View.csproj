@@ -87,7 +87,7 @@
     <Compile Include="GeradorDeSimulados.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Questoes.cs" />
+    <Compile Include="Questao.cs" />
     <Compile Include="VisualisadorPDF.cs" />
     <EmbeddedResource Include="ControleExibeQuestao.resx">
       <DependentUpon>ControleExibeQuestao.cs</DependentUpon>
@@ -108,6 +108,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="dbQuestoesDataSet.xsc">
       <DependentUpon>dbQuestoesDataSet.xsd</DependentUpon>
     </None>

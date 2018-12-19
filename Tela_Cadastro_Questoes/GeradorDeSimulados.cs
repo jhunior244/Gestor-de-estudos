@@ -10,12 +10,13 @@ namespace Tela_Cadastro_Questoes
 {
     class GeradorDeSimulados
     {
-        List<Questoes> listaSimulado;
-        Questoes[] simulado;
+        List<Questao> listaRetornadaBD;
+        private Questao[] simulado;
+        public Questao[] Simulado { get { return this.simulado; } }
+        int contQuest = -1;
         public void BuscarQuestoes(OleDbConnection objConection, int num, string ban, string ar, string assun, string mat)
         {
-            int cont = 0;
-            listaSimulado = new List<Questoes>();
+            listaRetornadaBD = new List<Questao>();
             DataSet ds = new DataSet();
             if (ban == "")
             {
@@ -56,20 +57,20 @@ namespace Tela_Cadastro_Questoes
                     bool rd = dataReader.GetBoolean(9);
                     bool re = dataReader.GetBoolean(10);
                     int id = dataReader.GetInt32(11);
-                    Questoes questao = new Questoes(id, enun, a, b, c, d, e, ra, rb, rc, rd, re);
-                    listaSimulado.Add(questao);
+                    Questao questao = new Questao(id, enun, a, b, c, d, e, ra, rb, rc, rd, re);
+                    listaRetornadaBD.Add(questao);
                 }
                 objConection.Close();
-                selectQuestoes(listaSimulado, num);
+                selectQuestoes(listaRetornadaBD, num);               
             }
             catch (Exception erro)
             {
                 System.Windows.Forms.MessageBox.Show(erro.Message);
             }
         }
-        private Questoes[] selectQuestoes(List<Questoes> lista, int numQuestoes)
+        private Questao[] selectQuestoes(List<Questao> lista, int numQuestoes)
         {
-            simulado = new Questoes[numQuestoes];
+            simulado = new Questao[numQuestoes];
             Random random = new Random();
             int aux = 0;
             while (aux < numQuestoes)
@@ -93,10 +94,19 @@ namespace Tela_Cadastro_Questoes
                     {
                         return true;
                     }
-                }
-               
+                }             
             }
             return false;
+        }
+        public Questao questAtual()
+        {
+            if(contQuest < simulado.Length)
+            {
+                contQuest++;
+                return Simulado[contQuest];
+                
+            }
+            else { return null; }
         }
     }
 }

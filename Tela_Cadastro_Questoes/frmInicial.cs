@@ -187,7 +187,7 @@ namespace Gestor_de_estudos
         }
         private void btnAddQuestao_Click(object sender, EventArgs e)
         {
-            Questoes questao = new Questoes(cbArea.Text, cbMateria.Text, cbAssunto.Text, cbBanca.Text, richEnunciado.Text, richAltA.Text, richAltB.Text, richAltC.Text, richAltD.Text, richAltE.Text, rdbletraA.Checked, rdbletraB.Checked, rdbletraC.Checked, rdbletraD.Checked, rdbletraE.Checked);
+            Questao questao = new Questao(cbArea.Text, cbMateria.Text, cbAssunto.Text, cbBanca.Text, richEnunciado.Text, richAltA.Text, richAltB.Text, richAltC.Text, richAltD.Text, richAltE.Text, rdbletraA.Checked, rdbletraB.Checked, rdbletraC.Checked, rdbletraD.Checked, rdbletraE.Checked);
             AddQuestoes addQuestoes = new AddQuestoes();
             addQuestoes.AddQuestão(objConection, questao);
         }
@@ -238,7 +238,15 @@ namespace Gestor_de_estudos
         private void btnGerarSimulado_Click(object sender, EventArgs e)
         {
             gerador.BuscarQuestoes(objConection, Convert.ToInt32(tbQtdQuestoes.Text), cbBancaNewSimulado.Text, cbAreaNewSimulado.Text, cbAssuntoNewSimulado.Text, cbMateriaNewSimulado.Text);
+            Questao quest = gerador.questAtual();
+            controleExibeQuestao1.ExibeQuestao(quest);
             
+        }
+
+        private void btnProxQuest_Click(object sender, EventArgs e)
+        {
+            Questao quest = gerador.questAtual();
+            controleExibeQuestao1.ExibeQuestao(quest);
         }
     }
 }

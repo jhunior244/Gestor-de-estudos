@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tela_Cadastro_Questoes
 {
-    class Questoes
+    public class Questao
     {
         private int idQuest;
         public int IdQuest { get { return this.idQuest; } }
@@ -52,7 +52,7 @@ namespace Tela_Cadastro_Questoes
         private bool validadeE;
         public bool ValidadeE { get { return (this.validadeE); } }
 
-        public Questoes(string ar, string mat, string assun, string banc, string enun, string A, string B, string C, string D, string E, bool valA, bool valB, bool valC, bool valD, bool valE)
+        public Questao(string ar, string mat, string assun, string banc, string enun, string A, string B, string C, string D, string E, bool valA, bool valB, bool valC, bool valD, bool valE)
         {
             this.Area = ar;
             this.Materia = mat;
@@ -70,7 +70,7 @@ namespace Tela_Cadastro_Questoes
             this.validadeD = valD;
             this.validadeE = valE;
         }
-        public Questoes(int id, string enun, string letraA, string letraB, string letraC, string letraD, string letraE, bool valA, bool valB,bool valC, bool valD, bool valE)
+        public Questao(int id, string enun, string letraA, string letraB, string letraC, string letraD, string letraE, bool valA, bool valB,bool valC, bool valD, bool valE)
         {
             this.idQuest = id;
             this.enunciado = enun;
@@ -84,6 +84,10 @@ namespace Tela_Cadastro_Questoes
             this.validadeC = valC;
             this.validadeD = valD;
             this.validadeE = valE;
+        }
+        public Questao(bool c)
+        {
+
         }
     }
 }

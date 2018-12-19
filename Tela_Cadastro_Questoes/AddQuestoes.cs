@@ -55,7 +55,7 @@ namespace Tela_Cadastro_Questoes
             }
             stream.Close();
         }
-        public void AddQuestão(OleDbConnection objConection, Questoes questão)
+        public void AddQuestão(OleDbConnection objConection, Questao questão)
         {
             try
             {

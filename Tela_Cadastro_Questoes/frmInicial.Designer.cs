@@ -82,6 +82,7 @@
             this.btnAddAssunto = new System.Windows.Forms.Button();
             this.btnAddBanca = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnProxQuest = new System.Windows.Forms.Button();
             this.controleExibeQuestao1 = new Tela_Cadastro_Questoes.ControleExibeQuestao();
             this.label9 = new System.Windows.Forms.Label();
             this.cbAreaNewSimulado = new System.Windows.Forms.ComboBox();
@@ -152,7 +153,7 @@
             this.panel1.Controls.Add(this.btnEstatisticas);
             this.panel1.Location = new System.Drawing.Point(4, 31);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(138, 650);
+            this.panel1.Size = new System.Drawing.Size(138, 858);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -291,7 +292,7 @@
             this.tabViewPDF.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
             this.tabViewPDF.Name = "tabViewPDF";
             this.tabViewPDF.SelectedIndex = 0;
-            this.tabViewPDF.Size = new System.Drawing.Size(480, 624);
+            this.tabViewPDF.Size = new System.Drawing.Size(480, 832);
             this.tabViewPDF.TabIndex = 4;
             this.tabViewPDF.Visible = false;
             this.tabViewPDF.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabViewPDF_DrawItem);
@@ -319,7 +320,7 @@
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(691, 833);
+            this.tabPage5.Size = new System.Drawing.Size(691, 832);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Questoes a revisar";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -358,7 +359,7 @@
             this.tabPage3.Controls.Add(this.btnAddBanca);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(691, 833);
+            this.tabPage3.Size = new System.Drawing.Size(691, 832);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Adicionar Questão";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -657,6 +658,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnProxQuest);
             this.tabPage2.Controls.Add(this.controleExibeQuestao1);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.cbAreaNewSimulado);
@@ -671,10 +673,20 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(691, 624);
+            this.tabPage2.Size = new System.Drawing.Size(691, 832);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Novo Simulado";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnProxQuest
+            // 
+            this.btnProxQuest.Location = new System.Drawing.Point(267, 722);
+            this.btnProxQuest.Name = "btnProxQuest";
+            this.btnProxQuest.Size = new System.Drawing.Size(121, 34);
+            this.btnProxQuest.TabIndex = 37;
+            this.btnProxQuest.Text = "PROXIMA";
+            this.btnProxQuest.UseVisualStyleBackColor = true;
+            this.btnProxQuest.Click += new System.EventHandler(this.btnProxQuest_Click);
             // 
             // controleExibeQuestao1
             // 
@@ -684,8 +696,9 @@
             this.controleExibeQuestao1.Location = new System.Drawing.Point(39, 49);
             this.controleExibeQuestao1.Margin = new System.Windows.Forms.Padding(4);
             this.controleExibeQuestao1.Name = "controleExibeQuestao1";
-            this.controleExibeQuestao1.Size = new System.Drawing.Size(592, 753);
+            this.controleExibeQuestao1.Size = new System.Drawing.Size(592, 654);
             this.controleExibeQuestao1.TabIndex = 36;
+            this.controleExibeQuestao1.Visible = false;
             // 
             // label9
             // 
@@ -803,7 +816,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(691, 624);
+            this.tabPage1.Size = new System.Drawing.Size(691, 832);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Resumos";
             // 
@@ -1133,7 +1146,7 @@
             this.tabControl1.MaximumSize = new System.Drawing.Size(954, 1900);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(699, 650);
+            this.tabControl1.Size = new System.Drawing.Size(699, 858);
             this.tabControl1.TabIndex = 2;
             // 
             // frmInicial
@@ -1141,7 +1154,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(1276, 693);
+            this.ClientSize = new System.Drawing.Size(1276, 901);
             this.Controls.Add(this.tabViewPDF);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
@@ -1266,5 +1279,6 @@
         private System.Windows.Forms.ComboBox cbBancaNewSimulado;
         private System.Windows.Forms.Button btnGerarSimulado;
         private Tela_Cadastro_Questoes.ControleExibeQuestao controleExibeQuestao1;
+        private System.Windows.Forms.Button btnProxQuest;
     }
 }
