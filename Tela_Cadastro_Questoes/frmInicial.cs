@@ -22,6 +22,8 @@ namespace Gestor_de_estudos
         ControleImpressao impressao = new ControleImpressao();
         OleDbConnection objConection = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\dbQuestoes.accdb");
         AddQuestoes addQuestoes = new AddQuestoes();
+        List<Questao> resposta = new List<Questao>();
+        
         public frmInicial()
         {
             InitializeComponent();
@@ -237,20 +239,74 @@ namespace Gestor_de_estudos
         }
         private void btnGerarSimulado_Click(object sender, EventArgs e)
         {
-            gerador.BuscarQuestoes(objConection, Convert.ToInt32(tbQtdQuestoes.Text), cbBancaNewSimulado.Text, cbAreaNewSimulado.Text, cbAssuntoNewSimulado.Text, cbMateriaNewSimulado.Text);
-            Questao quest = gerador.questAtual();
-            controleExibeQuestao1.ExibeQuestao(quest);
-            
+            if(tbQtdQuestoes.Text != "")
+            {
+                gerador.BuscarQuestoes(objConection, cbBancaNewSimulado.Text, cbAreaNewSimulado.Text, cbAssuntoNewSimulado.Text, cbMateriaNewSimulado.Text);
+                if (gerador.IniciarSimul)
+                {
+                    btnIniciarSimul.Enabled = true;
+                    btnGerarSimulado.Enabled = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Determine o número de questões o simulado terá.");
+            }                                  
         }
-
         private void btnProxQuest_Click(object sender, EventArgs e)
         {
-            Questao quest = gerador.questAtual();
-            if(quest != null)
+            Questao questaoRespondida = new Questao(controleExibeQuestao1.rdbA.Checked, controleExibeQuestao1.rdbB.Checked, controleExibeQuestao1.rdbC.Checked, controleExibeQuestao1.rdbD.Checked, controleExibeQuestao1.rdbE.Checked);
+            resposta[gerador.indexQuestoes] = questaoRespondida;
+            gerador.indexQuestoes++;
+            if(gerador.indexQuestoes == gerador.Simulado.Length -1)
             {
-                controleExibeQuestao1.ExibeQuestao(quest);
+                gerador.exibirQuestaoSemResposta(controleExibeQuestao1);
+                btnProxQuest.Enabled = false;               
             }
-           
+            else if(gerador.indexQuestoes > 0)
+            {
+                btnAntQuest.Enabled = true;
+                gerador.exibirQuestaoSemResposta(controleExibeQuestao1);               
+            }
+            else
+            {
+                gerador.exibirQuestaoSemResposta(controleExibeQuestao1);               
+            }           
+        }
+        private void btnIniciarSimul_Click(object sender, EventArgs e)
+        {          
+            gerador.selectQuestoes(Convert.ToInt32(tbQtdQuestoes.Text));
+            gerador.indexQuestoes = 0;   
+            gerador.exibirQuestaoSemResposta(controleExibeQuestao1);
+            btnIniciarSimul.Enabled = false;
+            if (gerador.Simulado.Length > 1)
+            {
+                btnProxQuest.Enabled = true;
+            }
+        }
+        private void tbQtdQuestoes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+        private void btnFinaSimulado_Click(object sender, EventArgs e)
+        {
+            controleExibeQuestao1.label2.BackColor = Color.GreenYellow;
+        }
+        private void btnAntQuest_Click(object sender, EventArgs e)
+        {
+            gerador.indexQuestoes--;
+            if(gerador.indexQuestoes == 0)
+            {
+                btnAntQuest.Enabled = false;
+                gerador.exibirQuestaoSemResposta(controleExibeQuestao1);
+            }
+            else
+            {
+                gerador.exibirQuestaoSemResposta(controleExibeQuestao1);
+            }
         }
     }
 }

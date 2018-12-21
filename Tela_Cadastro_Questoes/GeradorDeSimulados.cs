@@ -10,11 +10,15 @@ namespace Tela_Cadastro_Questoes
 {
     class GeradorDeSimulados
     {
-        List<Questao> listaRetornadaBD;
+        private List<Questao> listaRetornadaBD;
+        public List<Questao> ListaRetornadaBD { get { return this.listaRetornadaBD; } }
         private Questao[] simulado;
         public Questao[] Simulado { get { return this.simulado; } }
-        int contQuest = -1;
-        public void BuscarQuestoes(OleDbConnection objConection, int num, string ban, string ar, string assun, string mat)
+        private int contQuest = -1;
+        private bool iniciarSimul;
+        public bool IniciarSimul { get { return this.iniciarSimul; } }
+        public int indexQuestoes = -1;
+        public void BuscarQuestoes(OleDbConnection objConection, string ban, string ar, string assun, string mat)
         {
             listaRetornadaBD = new List<Questao>();
             DataSet ds = new DataSet();
@@ -43,46 +47,65 @@ namespace Tela_Cadastro_Questoes
                 cmm.CommandType = CommandType.Text;
                 cmm.Connection = objConection;
                 OleDbDataReader dataReader = cmm.ExecuteReader();
-                while (dataReader.Read())
+                
+                if (dataReader.HasRows)
                 {
-                    string enun = dataReader.GetString(0);
-                    string a = dataReader.GetString(1);
-                    string b = dataReader.GetString(2);
-                    string c = dataReader.GetString(3);
-                    string d = dataReader.GetString(4);
-                    string e = dataReader.GetString(5);
-                    bool ra = dataReader.GetBoolean(6);
-                    bool rb = dataReader.GetBoolean(7);
-                    bool rc = dataReader.GetBoolean(8);
-                    bool rd = dataReader.GetBoolean(9);
-                    bool re = dataReader.GetBoolean(10);
-                    int id = dataReader.GetInt32(11);
-                    Questao questao = new Questao(id, enun, a, b, c, d, e, ra, rb, rc, rd, re);
-                    listaRetornadaBD.Add(questao);
+                    while (dataReader.Read())
+                    {
+                        string enun = dataReader.GetString(0);
+                        string a = dataReader.GetString(1);
+                        string b = dataReader.GetString(2);
+                        string c = dataReader.GetString(3);
+                        string d = dataReader.GetString(4);
+                        string e = dataReader.GetString(5);
+                        bool ra = dataReader.GetBoolean(6);
+                        bool rb = dataReader.GetBoolean(7);
+                        bool rc = dataReader.GetBoolean(8);
+                        bool rd = dataReader.GetBoolean(9);
+                        bool re = dataReader.GetBoolean(10);
+                        int id = dataReader.GetInt32(11);
+                        Questao questao = new Questao(id, enun, a, b, c, d, e, ra, rb, rc, rd, re);
+                        listaRetornadaBD.Add(questao);
+                    }
+                    this.iniciarSimul = true;
+                    System.Windows.Forms.MessageBox.Show("Para iniciar o seu simulado clique no botão iniciar!");
                 }
-                objConection.Close();
-                selectQuestoes(listaRetornadaBD, num);               
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("Não foram encontradas questões com os parametros procurados.");
+                }
+                objConection.Close();                              
             }
             catch (Exception erro)
             {
                 System.Windows.Forms.MessageBox.Show(erro.Message);
+                objConection.Close();
             }
         }
-        private Questao[] selectQuestoes(List<Questao> lista, int numQuestoes)
+        public void selectQuestoes(int numQuestoes)
         {
             simulado = new Questao[numQuestoes];
-            Random random = new Random();
-            int aux = 0;
-            while (aux < numQuestoes)
+            if (simulado.Length < listaRetornadaBD.Count)
             {
-                int posQuestao = random.Next(lista.Count);
-                if (!questaoJaAcicionada(lista[posQuestao].IdQuest))//verifica se a questao sorteada ja foi adicionada
+                Random random = new Random();
+                int aux = 0;
+                while (aux < numQuestoes)
                 {
-                    simulado[aux] = lista[posQuestao];
-                    aux++;
+                    int posQuestao = random.Next(listaRetornadaBD.Count);
+                    if (!questaoJaAcicionada(listaRetornadaBD[posQuestao].IdQuest))//verifica se a questao sorteada ja foi adicionada
+                    {
+                        simulado[aux] = listaRetornadaBD[posQuestao];
+                        aux++;
+                    }
                 }
             }
-            return simulado;
+            else
+            {
+                for(int i = 0; i < simulado.Length; i++)
+                {
+                    simulado[i] = listaRetornadaBD[i];
+                }
+            }                      
         }
         private bool questaoJaAcicionada(int id)
         {
@@ -98,15 +121,10 @@ namespace Tela_Cadastro_Questoes
             }
             return false;
         }
-        public Questao questAtual()
+        public void exibirQuestaoSemResposta(ControleExibeQuestao controle)
         {
-            if(contQuest < simulado.Length -1)
-            {
-                contQuest++;
-                return Simulado[contQuest];
-                
-            }
-            else { return null; }
+            controle.ExibeQuestao(Simulado[indexQuestoes]);           
         }
     }
 }
+

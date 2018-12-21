@@ -45,23 +45,25 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(33, 94);
+            this.label6.Location = new System.Drawing.Point(33, 120);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 16);
             this.label6.TabIndex = 21;
             this.label6.Text = "label6";
+            this.label6.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(33, 117);
+            this.label5.Location = new System.Drawing.Point(33, 95);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 16);
             this.label5.TabIndex = 20;
             this.label5.Text = "label5";
+            this.label5.Visible = false;
             // 
             // label4
             // 
@@ -73,6 +75,7 @@
             this.label4.Size = new System.Drawing.Size(45, 16);
             this.label4.TabIndex = 19;
             this.label4.Text = "label4";
+            this.label4.Visible = false;
             // 
             // label3
             // 
@@ -88,22 +91,24 @@
             // rdbE
             // 
             this.rdbE.AutoSize = true;
-            this.rdbE.Location = new System.Drawing.Point(7, 119);
+            this.rdbE.Location = new System.Drawing.Point(7, 120);
             this.rdbE.Margin = new System.Windows.Forms.Padding(4);
             this.rdbE.Name = "rdbE";
             this.rdbE.Size = new System.Drawing.Size(14, 13);
             this.rdbE.TabIndex = 17;
             this.rdbE.UseVisualStyleBackColor = true;
+            this.rdbE.Visible = false;
             // 
             // rdbD
             // 
             this.rdbD.AutoSize = true;
-            this.rdbD.Location = new System.Drawing.Point(7, 96);
+            this.rdbD.Location = new System.Drawing.Point(7, 95);
             this.rdbD.Margin = new System.Windows.Forms.Padding(4);
             this.rdbD.Name = "rdbD";
             this.rdbD.Size = new System.Drawing.Size(14, 13);
             this.rdbD.TabIndex = 16;
             this.rdbD.UseVisualStyleBackColor = true;
+            this.rdbD.Visible = false;
             // 
             // rdbC
             // 
@@ -114,6 +119,7 @@
             this.rdbC.Size = new System.Drawing.Size(14, 13);
             this.rdbC.TabIndex = 15;
             this.rdbC.UseVisualStyleBackColor = true;
+            this.rdbC.Visible = false;
             // 
             // rdbB
             // 
@@ -165,6 +171,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -173,7 +180,6 @@
             this.Controls.Add(this.rdbD);
             this.Controls.Add(this.rdbC);
             this.Controls.Add(this.rdbB);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.rdbA);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -191,12 +197,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RadioButton rdbD;
-        private System.Windows.Forms.RadioButton rdbC;
-        private System.Windows.Forms.RadioButton rdbB;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton rdbA;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton rdbE;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.RadioButton rdbD;
+        public System.Windows.Forms.RadioButton rdbC;
+        public System.Windows.Forms.RadioButton rdbB;
+        public System.Windows.Forms.RadioButton rdbA;
+        public System.Windows.Forms.RadioButton rdbE;
     }
 }

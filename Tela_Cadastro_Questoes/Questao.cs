@@ -85,9 +85,13 @@ namespace Tela_Cadastro_Questoes
             this.validadeD = valD;
             this.validadeE = valE;
         }
-        public Questao(bool c)
+        public Questao(bool a, bool b, bool c, bool d, bool e)
         {
-
+            this.validadeA = a;
+            this.validadeB = b;
+            this.validadeC = c;
+            this.validadeD = d;
+            this.validadeE = e;
         }
     }
 }

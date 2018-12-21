@@ -82,6 +82,7 @@
             this.btnAddAssunto = new System.Windows.Forms.Button();
             this.btnAddBanca = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnFinaSimulado = new System.Windows.Forms.Button();
             this.btnProxQuest = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.cbAreaNewSimulado = new System.Windows.Forms.ComboBox();
@@ -126,8 +127,10 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.miniToolStrip = new System.Windows.Forms.MenuStrip();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.btnFinaSimulado = new System.Windows.Forms.Button();
+            this.btnIniciarSimul = new System.Windows.Forms.Button();
+            this.btnPararSimul = new System.Windows.Forms.Button();
             this.controleExibeQuestao1 = new Tela_Cadastro_Questoes.ControleExibeQuestao();
+            this.btnAntQuest = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.menuStripPrincipal.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -510,6 +513,7 @@
             // richAltD
             // 
             this.richAltD.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richAltD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richAltD.Location = new System.Drawing.Point(65, 607);
             this.richAltD.Name = "richAltD";
             this.richAltD.Size = new System.Drawing.Size(587, 74);
@@ -519,6 +523,7 @@
             // richAltE
             // 
             this.richAltE.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richAltE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richAltE.Location = new System.Drawing.Point(64, 687);
             this.richAltE.Name = "richAltE";
             this.richAltE.Size = new System.Drawing.Size(587, 74);
@@ -528,6 +533,7 @@
             // richAltC
             // 
             this.richAltC.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richAltC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richAltC.Location = new System.Drawing.Point(64, 527);
             this.richAltC.Name = "richAltC";
             this.richAltC.Size = new System.Drawing.Size(587, 74);
@@ -537,6 +543,7 @@
             // richAltB
             // 
             this.richAltB.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richAltB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richAltB.Location = new System.Drawing.Point(65, 447);
             this.richAltB.Name = "richAltB";
             this.richAltB.Size = new System.Drawing.Size(587, 74);
@@ -546,6 +553,7 @@
             // richAltA
             // 
             this.richAltA.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richAltA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richAltA.Location = new System.Drawing.Point(65, 367);
             this.richAltA.Name = "richAltA";
             this.richAltA.Size = new System.Drawing.Size(587, 74);
@@ -555,6 +563,7 @@
             // richEnunciado
             // 
             this.richEnunciado.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richEnunciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richEnunciado.Location = new System.Drawing.Point(38, 152);
             this.richEnunciado.Name = "richEnunciado";
             this.richEnunciado.Size = new System.Drawing.Size(634, 209);
@@ -659,6 +668,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnAntQuest);
+            this.tabPage2.Controls.Add(this.btnPararSimul);
+            this.tabPage2.Controls.Add(this.btnIniciarSimul);
             this.tabPage2.Controls.Add(this.btnFinaSimulado);
             this.tabPage2.Controls.Add(this.btnProxQuest);
             this.tabPage2.Controls.Add(this.controleExibeQuestao1);
@@ -680,10 +692,22 @@
             this.tabPage2.Text = "Novo Simulado";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnFinaSimulado
+            // 
+            this.btnFinaSimulado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnFinaSimulado.Location = new System.Drawing.Point(394, 795);
+            this.btnFinaSimulado.Name = "btnFinaSimulado";
+            this.btnFinaSimulado.Size = new System.Drawing.Size(121, 34);
+            this.btnFinaSimulado.TabIndex = 38;
+            this.btnFinaSimulado.Text = "FINALIZAR";
+            this.btnFinaSimulado.UseVisualStyleBackColor = true;
+            this.btnFinaSimulado.Click += new System.EventHandler(this.btnFinaSimulado_Click);
+            // 
             // btnProxQuest
             // 
             this.btnProxQuest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnProxQuest.Location = new System.Drawing.Point(198, 795);
+            this.btnProxQuest.Enabled = false;
+            this.btnProxQuest.Location = new System.Drawing.Point(267, 795);
             this.btnProxQuest.Name = "btnProxQuest";
             this.btnProxQuest.Size = new System.Drawing.Size(121, 34);
             this.btnProxQuest.TabIndex = 37;
@@ -786,11 +810,13 @@
             // 
             this.tbQtdQuestoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbQtdQuestoes.Location = new System.Drawing.Point(553, 20);
+            this.tbQtdQuestoes.MaxLength = 2;
             this.tbQtdQuestoes.Multiline = true;
             this.tbQtdQuestoes.Name = "tbQtdQuestoes";
             this.tbQtdQuestoes.Size = new System.Drawing.Size(43, 23);
             this.tbQtdQuestoes.TabIndex = 9;
             this.tbQtdQuestoes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbQtdQuestoes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbQtdQuestoes_KeyPress);
             // 
             // tabPage1
             // 
@@ -1099,7 +1125,7 @@
             this.richEditTexto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richEditTexto.Location = new System.Drawing.Point(76, 119);
             this.richEditTexto.Name = "richEditTexto";
-            this.richEditTexto.Size = new System.Drawing.Size(539, 471);
+            this.richEditTexto.Size = new System.Drawing.Size(539, 687);
             this.richEditTexto.TabIndex = 0;
             this.richEditTexto.Text = "";
             // 
@@ -1110,7 +1136,7 @@
             this.richTextBox1.Enabled = false;
             this.richTextBox1.Location = new System.Drawing.Point(38, 88);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(613, 530);
+            this.richTextBox1.Size = new System.Drawing.Size(613, 738);
             this.richTextBox1.TabIndex = 10;
             this.richTextBox1.Text = "";
             // 
@@ -1140,15 +1166,25 @@
             this.tabControl1.Size = new System.Drawing.Size(699, 858);
             this.tabControl1.TabIndex = 2;
             // 
-            // btnFinaSimulado
+            // btnIniciarSimul
             // 
-            this.btnFinaSimulado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnFinaSimulado.Location = new System.Drawing.Point(325, 795);
-            this.btnFinaSimulado.Name = "btnFinaSimulado";
-            this.btnFinaSimulado.Size = new System.Drawing.Size(121, 34);
-            this.btnFinaSimulado.TabIndex = 38;
-            this.btnFinaSimulado.Text = "FINALIZAR";
-            this.btnFinaSimulado.UseVisualStyleBackColor = true;
+            this.btnIniciarSimul.Enabled = false;
+            this.btnIniciarSimul.Location = new System.Drawing.Point(39, 49);
+            this.btnIniciarSimul.Name = "btnIniciarSimul";
+            this.btnIniciarSimul.Size = new System.Drawing.Size(102, 23);
+            this.btnIniciarSimul.TabIndex = 39;
+            this.btnIniciarSimul.Text = "INICIAR";
+            this.btnIniciarSimul.UseVisualStyleBackColor = true;
+            this.btnIniciarSimul.Click += new System.EventHandler(this.btnIniciarSimul_Click);
+            // 
+            // btnPararSimul
+            // 
+            this.btnPararSimul.Location = new System.Drawing.Point(147, 49);
+            this.btnPararSimul.Name = "btnPararSimul";
+            this.btnPararSimul.Size = new System.Drawing.Size(102, 23);
+            this.btnPararSimul.TabIndex = 40;
+            this.btnPararSimul.Text = "PARAR";
+            this.btnPararSimul.UseVisualStyleBackColor = true;
             // 
             // controleExibeQuestao1
             // 
@@ -1157,12 +1193,24 @@
             this.controleExibeQuestao1.AutoScroll = true;
             this.controleExibeQuestao1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.controleExibeQuestao1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.controleExibeQuestao1.Location = new System.Drawing.Point(39, 49);
+            this.controleExibeQuestao1.Location = new System.Drawing.Point(39, 79);
             this.controleExibeQuestao1.Margin = new System.Windows.Forms.Padding(4);
             this.controleExibeQuestao1.Name = "controleExibeQuestao1";
-            this.controleExibeQuestao1.Size = new System.Drawing.Size(592, 739);
+            this.controleExibeQuestao1.Size = new System.Drawing.Size(592, 709);
             this.controleExibeQuestao1.TabIndex = 36;
             this.controleExibeQuestao1.Visible = false;
+            // 
+            // btnAntQuest
+            // 
+            this.btnAntQuest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAntQuest.Enabled = false;
+            this.btnAntQuest.Location = new System.Drawing.Point(140, 795);
+            this.btnAntQuest.Name = "btnAntQuest";
+            this.btnAntQuest.Size = new System.Drawing.Size(121, 34);
+            this.btnAntQuest.TabIndex = 41;
+            this.btnAntQuest.Text = "ANTERIOR";
+            this.btnAntQuest.UseVisualStyleBackColor = true;
+            this.btnAntQuest.Click += new System.EventHandler(this.btnAntQuest_Click);
             // 
             // frmInicial
             // 
@@ -1296,5 +1344,8 @@
         private Tela_Cadastro_Questoes.ControleExibeQuestao controleExibeQuestao1;
         private System.Windows.Forms.Button btnProxQuest;
         private System.Windows.Forms.Button btnFinaSimulado;
+        private System.Windows.Forms.Button btnPararSimul;
+        private System.Windows.Forms.Button btnIniciarSimul;
+        private System.Windows.Forms.Button btnAntQuest;
     }
 }
